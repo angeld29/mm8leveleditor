@@ -1,0 +1,31 @@
+0x00 4-bytes: text "D3DT"
+0x04 4-bytes: offset to rest of data - 7713568 for MM7
+
+N 36-byte header records -- see offset 7713468 for value of N
+- 4-bytes size of compressed data
+- 32 other bytes
+zlib compressed data -- decompressed size unknown
+
+(compressed data offsets)
+44
+9959
+12904
+15688
+22899
+28074
+[...]
+7705749
+7707834
+7710187
+
+
+starting at 7713568
+
+4-byte record - 1238 -- N count of 20-byte records, 4-byte records, and compressed data
+
+N 20-byte records
+- 8-byte name
+- 12 other bytes
+
+N 4-byte records -- offsets to compressed data header offsets
+

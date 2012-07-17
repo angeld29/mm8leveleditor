@@ -1,0 +1,136 @@
+bin
+====
+default wall/floor/ceiling not in blv
+redbook track not in blv
+facet texture grid not in blv
+facet scale not in blv
+center not in blv
+layers not in blv
+
+0	88,136,-120	4 bytes?
+4	384?	4 bytes?
+8	?	zero
+12	4?	4 bytes?
+16	offset to # of vertexes
+20	?	zero
+24	vertexes*6?	4 bytes?	size of vertex list
+28	offset to vertex list
+32	?	zero
+36	4?
+40	vertexes*6+12? 	4 bytes?	End of vertex list pointer?
+48	offset		4 bytes? 12
+52	vertexes*6+16? 	4 bytes?
+64	offset		4 bytes? 12
+76	offset		4 bytes? 12
+88	offset		4 bytes? 12
+100	offset		4 bytes? 12
+112	offset		4 bytes? 12
+124	offset		4 bytes? 12
+136	offset		4 bytes? 12 
+148	offset		4 bytes? 12
+160	offset		4 bytes? 12
+172	offset		4 bytes? 12
+184	offset		4 bytes? 12
+196	offset		4 bytes? 12
+204	offset (small)	4 bytes? 12	
+208	offset		4 bytes? 12
+220	offset		4 bytes? 24	24 between 4 & 3 verts; 36 between 2 3-verts
+232	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+244	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+256	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+268	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+280	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+292	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+304	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+316	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+328	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+340	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+352	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3
+364	offset		4 bytes? 24	24 btw 4/3; 32 btw 3/3 (small)
+376	blv file size	4 bytes
+384	level number		4 bytes
+388	Level name  		34 bytes w 0s
+464	midi track name		24 bytes w 0s
+488	offset	(small)	4 bytes? 12
+
+
+520	4	4byte	vertex list count
+
+524 	-768	x1
+526 	896	y1
+528	0	z1
+530	-768	x2
+532	768	y2
+534	0	z2
+536	-640	x3
+538	768	y3
+540	0	z3
+542	-640	x4
+544	896	y4
+546	0	z4
+
+facet:
+596	portal/secret/etc attrib mask
+	1 portal
+	2 secret
+	4 scroll down
+	8 align top (1 of x)?
+	16 water
+	32 scroll up
+	64 scroll left
+
+597	(1 always on?)
+	8 scroll right
+	16 align left (1 of x)?
+	32 invisible
+	64 animate  
+	128 align right (1 of x)?
+
+598	2 align bottom (1 of x)?
+	4 pegged?
+	8 align left (3 of x)?
+	32 alternate sound
+	64 sky
+	
+599	2 facet event click
+	4 facet event player touch
+	8 facet event monster touch
+	16 facet event object touch
+	32 no block
+	64 lava
+	128 align bottom/top/left/right (2 of x)?
+
+604	facet 4=>3 change?
+
+608	facet 4=>3 change? 52=>48 (-4)
+
+612	facet 4=>3 change? 62=>56 (-6)
+
+616	facet 4=>3 change? 72=>64 (-8)
+
+620	facet 4=>3 change? 82=>72 (-10)
+
+645	# of facet vertexes? 4 bytes
+
+654	facet vertex 4=>3 change?  3=> 0	2 bytes
+656	facet vertex 4=>3 change?  0=>-3	1 bytes
+657	facet vertex 4=>3 change?  0=>-1	1 bytes
+658	facet vertex 4=>3 change? -3=> 0	1 bytes
+659	facet vertex 4=>3 change? -1=> 0	1 bytes
+660	facet vertex 4=>3 change?  0=> 2	2 bytes
+662	facet vertex 4=>3 change?  3=>-3	1 bytes
+663	facet vertex 4=>3 change?  0=>-1	2 bytes
+
+668	facet vertex 4=>3 change?  0=> 2	2 bytes
+670	facet vertex 4=>3 change? -3=> 0	2 bytes
+
+674	facet vertex 4=>3 change?  3=> 0	4 bytes
+
+697	layer or door?
+
+708	name of texture bitmap	at least 8 bytes?
+
+778	facet texture grid du	2 bytes
+780	facet texture grid dv	2 bytes
+
+124792 dup of 599?

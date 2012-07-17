@@ -1,0 +1,2 @@
+For MM6, there must be no gaps in the item numbers or the game will crash on startup, although the item numbers do not need to be in order.
+Even using the next available number, however, still fails to create a usable item for me.

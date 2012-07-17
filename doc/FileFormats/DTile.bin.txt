@@ -1,0 +1,13 @@
+first 4 bytes -- number of entries
+
+entry -- 26 bytes
+20 bytes of file name
+12 tiles per set?
+
+oute3 (new sorpigal) tile map accesses them by entry index
+odm A0  0 is normal
+odm A0  1 gave snow
+odm A0  2 gave sand
+odm A0  3 gave volcanic
+odm A0  4 gave granite brick path
+odm A0  5 went strange

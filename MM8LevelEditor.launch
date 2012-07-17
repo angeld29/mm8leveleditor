@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/mm8leveleditor/src/org/gamenet/application/mm8leveleditor/MM8LevelEditor.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.gamenet.application.mm8leveleditor.MM8LevelEditor"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="mm8leveleditor"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms1024M -Xmx1024M"/>
+</launchConfiguration>

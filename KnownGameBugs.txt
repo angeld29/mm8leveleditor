@@ -1,0 +1,23 @@
+Not every item for a chest shows up if the item placement fails.
+Intentional? or bug?
+
+MM6
+=====
+Sewer Key bug -- sewer key sometimes doesn't appear in Freehaven sewer if you exit before finding it
+You can have two henchmen with the same name, and dismissing one doesn't always do what you want.
+
+MM7
+=====
+lich jar bug (opening chest with the Souljars under Thunderfist Mountain makes them disappear)
+
+MM8
+=====
+Can't sell special items
+
+Xanthor bug
+ssence is in fact, that Conflux Key appearance in your inventory is triggered by two circumstances:
+1. Clicking on hostel door in Ravenshore
+2. Presence of all 4 Elemental Keys in your inventory.
+the third - presence of Xanthor in hostel - is skipped. Get the Hearts, click on empty hostel door, see the movie and - voila!- go into Crystal.
+
+Opening dungeon door in turn-based mode fails to allow character join dialogs

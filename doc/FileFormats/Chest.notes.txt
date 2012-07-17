@@ -1,0 +1,9 @@
+bin Notes:
+============
+0	entryCount	4 bytes
+
+36 entry size
+
+0	name1	32 bytes
+32	0e 0a	2 bytes
+34	entry number 2 bytes -- 1-based

@@ -1,0 +1,1795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="http://www.gamerhome.net/main/index.php?s=c75368d341c56aabd22ec0add2c83f5c&showtopic=152023" --><!-- removed --><meta http-equiv="Content-Type" content="text/html ; CHARSET=UTF-8"><title>Game person's family -&gt; mm8leveleditor Please Read</title> 
+
+<style type="text/css">
+	/* 
+ * Cascading Style Sheet(CSS 467), for Invision Power Board 2.0.0
+ * Author: James A. Mathias, admin@leihu.com, http://www.1lotus.com 
+ * Copyright: 2004 Invision Power Services, all rights reserved 
+ *
+ * All style attributes in alpha-numeric order starting from 0
+ * Smart IPB Developed With The Chinese Version Css
+ */
+
+/* 
+ * ========================================
+ * global element styles 
+ * ========================================
+ */
+
+html{
+	overflow-x: auto; /* fixes MSIE scrollbar bug DO NOT REMOVE, has no effect in Mozilla, or Opera */
+}
+
+body{ 
+	background: #FFF;
+	color: #222;
+	font-family: Verdana, Tahoma, Arial, Trebuchet MS, Sans-Serif, Georgia, Courier, Times New Roman, Serif, 宋体;
+	font-size: 12px;
+	line-height: 210%;/*135*/
+	margin: 0;
+	padding: 0; /* required for Opera to have 0 margin */
+	text-align: center; /* centers board in MSIE */
+}
+
+table,
+tr,
+td{ /* required for text in tables, because tables do not inherit from body */
+	background: transparent;
+	color: #222;
+	font-size: 12px;
+	line-height: 135%;
+}
+
+table{ /* makes all tables 100% wide */
+	width: 100%;
+}
+
+td,
+.divpad{ /* gives all tables faux cellpadding of 5px */
+	padding: 5px;
+}
+
+td.nopad{ /* allows some tables to have no padding on the td */
+	padding: 0;
+}
+
+form{
+	display: inline;
+	margin: 0; /* removes mystery form tag gapping */
+	padding: 0; /* removes mystery form tag gapping */
+}
+
+img{
+	border: 0; /* makes sure linked images do not have a border */
+}
+
+/* 
+ * ========================================
+ * global hyperlink styles 
+ * ========================================
+ */
+
+a:link,
+a:visited,
+a:active{
+	background: transparent;
+	color: #222;
+	text-decoration: none;
+}
+
+a:hover{
+	background: transparent;
+	color: #34498B;
+}
+
+/* 
+ * ========================================
+ * Main wrapper, this controls the overall width of the board in you browser view window. 
+ * ========================================
+ */
+
+#ipbwrapper{ 
+	margin: 20px auto 20px auto; /* centers the box, no matter the overall width, also applies a 20px gap at the top and bottom of the board */
+	text-align: left; /* re_aligns text to left second part of two part MSIE centering workaround */
+	/* EDIT THIS TO CHANGE THE WIDTH OF THE BOARD -> 750px is a common fixed resolution size */
+	width: 98%;
+}
+
+/* 
+ * ========================================
+ * styles for pagination links 
+ * ========================================
+ */
+ 
+
+.pagelink,
+.pagelinklast,
+.pagecurrent,
+.minipagelink,
+.minipagelinklast{
+	background: #F0F5FA;
+	border: 1px solid #072A66;
+	padding: 1px 3px 1px 3px;
+}
+
+.pagelinklast,
+.minipagelinklast{
+	background: #DFE6EF;
+}
+
+
+.pagecurrent{
+	background: #FFC9A5;
+}
+
+.minipagelink,
+.minipagelinklast{
+	border: 1px solid #C2CFDF;
+	font-size: 10px;
+	margin: 0 1px 0 0;
+}
+
+.pagelink a:active,
+.pagelink a:visited,
+.pagelink a:link,
+.pagelinklast a:active,
+.pagelinklast a:visited,
+.pagelinklast a:link,
+.pagecurrent a:active,
+.pagecurrent a:visited,
+.pagecurrent a:link,
+.minipagelink a:active,
+.minipagelink a:visited,
+.minipagelink a:link,
+.minipagelinklast a:active,
+.minipagelinklast a:visited,
+.minipagelinklast a:link{
+	text-decoration: none;
+}
+
+/* fake button effect for some links */
+.fauxbutton{
+	background: #BFCDE0;
+	border: 1px solid #072A66;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 4px;
+}
+
+.fauxbutton a:link,
+.fauxbutton a:visited,
+.fauxbutton a:active{
+	color: #222 !important;
+	text-decoration: none;
+}
+
+.forumdesc,
+.forumdesc a:link,
+.forumdesc a:visited,
+.forumdesc a:active{ 
+	background: transparent;
+	font-size: 12px; 
+	color: #666;
+	line-height: 135%;
+	margin: 2px 0 0 0;
+	padding: 0;
+}
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* =================================================================================== */
+
+.searchlite {
+	background-color:yellow;
+	font-weight:bold;
+	color: red;
+}
+
+.activeusers{
+	background: #FFF;
+	border: 1px solid #072A66;
+	color: #000;
+	margin: 0px;
+	padding: 1px;
+}
+
+.activeuserposting a:link,
+.activeuserposting a:visited,
+.activeuserposting a:active,
+.activeuserposting
+{
+	font-style:italic;
+	text-decoration: none;
+	border-bottom:1px dotted black;
+}
+
+fieldset.search{ 
+	line-height: 150%;
+	padding: 6px; 
+}
+
+label{ 
+	cursor: pointer; 
+}
+
+img.attach{ 
+	background: #808080 url(style_images/1/click2enlarge.gif) no-repeat top right;
+	border: 1px solid #808080;
+	margin: 0 2px 0 0;
+	padding: 11px 2px 2px 2px;
+}
+
+.thumbwrap,
+.thumbwrapp,
+.fullimagewrap{
+	border: 1px solid #072A66;
+	margin: 2px;
+}
+
+.thumbwrapp{
+	border: 2px solid #660707;
+}
+
+.fullimagewrap{
+	background: #F5F9FD;
+	text-align: center;
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+.thumbwrap h4,
+.thumbwrapp h4{	
+	background: #DDE6F2;
+	border: 0 !important;
+	border-bottom: 1px solid #5176B5 !important;
+	color: #5176B5; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.thumbwrap p,
+.thumbwrapp p{
+	background: #EEF2F7 !important;
+	border: 0 !important;
+	border-top: 1px solid #5176B5 !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	text-align: left;
+}
+
+.thumbwrap p.alt,
+.thumbwrapp p.alt{
+	background: #DFE6EF !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	text-align: left;
+}
+
+.thumbwrapp p.pin{
+	background: #EFDFDF !important;
+	text-align: center !important;
+}
+	
+.thumbwrap img.galattach,
+.thumbwrapp img.galattach{
+	background: #FFF url(style_images/1/img_larger.gif) no-repeat bottom right;
+	border: 1px solid #072A66;
+	margin: 5px;
+	padding: 2px 2px 10px 2px;
+}
+
+li.helprow{ 
+	margin: 0 0 10px 0;
+	padding: 0; 
+}
+
+ul#help{ 
+	padding: 0 0 0 15px; 
+}
+
+.warngood,
+.warnbad{ 
+	color: #0B9500;
+	font-weight: bold;
+}
+
+.warnbad{ 
+	color: #DD0000;
+}
+
+#padandcenter{ 
+	margin: 0 auto 0 auto;
+	padding: 14px 0 14px 0;
+	text-align: center;
+}
+
+#profilename{ 
+	font-size: 28px; 
+	font-weight: bold; 
+}
+
+#photowrap{ 
+	padding: 6px; 
+}
+
+#phototitle{ 
+	border-bottom: 1px solid #000; 
+	font-size: 24px; 
+}
+
+#photoimg{ 
+	margin: 15px 0 0 0;
+	text-align: center; 
+} 
+
+#ucpmenu,
+#ucpcontent{ 
+	background: #F5F9FD;
+	border: 1px solid #345487;
+	line-height: 150%;
+}
+
+#ucpmenu p{ 
+	margin: 0; 
+	padding: 2px 5px 6px 9px;
+}
+
+#ucpmenu a:link, 
+#ucpmenu a:active, 
+#ucpmenu a:visited{ 
+	text-decoration: none; 
+}
+
+#ucpcontent{ 
+	width: auto;
+}
+
+#ucpcontent p{ 
+	margin: 0;
+	padding: 10px;
+}
+
+.activeuserstrip{ 
+	background: #BCD0ED;
+	padding: 6px;
+}
+
+/* Topic View elements */
+.signature{  
+	background: transparent;
+	color: #339; 
+	font-size: 11px;
+	line-height: 150%;
+}
+
+.postdetails{ 
+	font-size: 12px;
+	line-height:140%;
+}
+
+.postcolor{ 
+	font-size: 14px; /*12px*/
+	line-height: 160%;
+             word-break:break-all;
+}
+
+.normalname{ 
+	color: #003;
+	font-size: 12px; 
+	font-weight: bold; 
+}
+
+.normalname a:link, 
+.normalname a:visited, 
+.normalname a:active{ 
+	font-size: 12px;
+}
+
+.post1,
+.bg1{ 
+	background: #F5F9FD;
+}
+
+.post2,
+.bg3{ 
+	background: #EEF2F7;
+}
+
+.row2shaded,
+.post1shaded { background-color: #DEDBE4 }
+.row4shaded,
+.post2shaded { background-color: #E3DFE7 }
+
+.row1{ 
+	background: #DFE6EF; 
+}
+
+.row2{ 
+	background: #E4EAF2; 
+}
+
+.darkrow1{ 
+	background: #BCD0ED;
+	color: #3A4F6C; 
+}
+
+.darkrow3{ 
+	background: #D1DCEB; 
+	color: #3A4F6C; 
+}
+
+/* tableborders gives the white column / row lines effect */
+.plainborder,
+.tablefill,
+.tablepad{ 
+	background: #F5F9FD;
+	border: 1px solid #345487;
+}
+
+.tablefill,
+.tablepad{ 
+	padding: 6px;  
+}
+
+.tablepad{ 
+	border: 0 !important;
+}
+
+.wrapmini{ 
+	float: left;
+	line-height: 1.5em;
+	width: 25%;
+}
+
+.pagelinks{
+	float: left;
+	line-height: 1.2em;
+	width: 35%;
+}
+
+.desc{ 
+	font-size: 11px; 
+	color: #434951;
+}
+
+.lastaction
+{
+	font-size: 12px; 
+	color: #434951;
+}
+
+.edit{ 
+	font-size: 12px;
+}
+
+.thin{ 
+	border: 1px solid #FFF;
+	border-left: 0;
+	border-right: 0;
+	line-height: 150%;
+	margin: 2px 0 2px 0;
+	padding: 6px 0 6px 0;
+}
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* =================================================================================== */
+
+/* 
+ * ========================================
+ * calendar styles 
+ * ========================================
+ */
+	
+.calmonths{ 
+	background: #F0F5FA;
+	border: 1px solid #C2CFDF;
+	font-size: 18px; 
+	font-weight: bold; 
+	margin: 5px 0 5px 0;
+	padding: 8px;
+	text-align: center;
+}
+
+.weekday{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.calmonths a{
+	text-decoration: none;
+}
+
+.calday,
+.calweekday{ 
+	background: #DFE6EF;
+	color: #666;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0;
+	padding: 4px;
+	text-align: right;
+}
+
+.calweekday{
+	border-right: 1px solid #AAA;
+	color: #222;
+	font-size: 14px;
+	padding: 6px;
+	text-align: center;
+}
+
+.cellblank,
+.celldate,
+.celltoday,
+.mcellblank,
+.mcelldate,
+.mcelltoday{
+	background: #EEF2F7;
+	height: 100px;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
+.mcellblank,
+.mcelldate,
+.mcelltoday{
+	height: auto;
+}
+
+.cellblank,
+.mcellblank{
+	background: #C2CFDF;
+}
+
+.celltoday,
+.mcelltoday{
+	border: 2px solid #8B0000;
+}
+
+/* 
+ * ========================================
+ * form styles 
+ * ========================================
+ */
+
+input,
+textarea,
+select{
+	background: #FFF;
+	border: 1px solid #4C77B6;
+	color: #000;
+	font-family: verdana, helvetica, sans-serif, 宋体;
+	font-size: 12px;
+	margin: 5px;
+	padding: 2px;
+	vertical-align: middle;
+}
+
+select{
+	border: 0;
+	font-family: verdana, helvetica, sans-serif, 宋体;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+input.button{
+	margin: 0;
+	width: auto;
+}
+optgroup option{
+	font-family: verdana, helvetica, sans-serif, 宋体;
+	font-size: 12px;
+}
+
+.codebuttons{ 
+	font-family: Verdana, Helvetica, Sans-Serif, 宋体; 
+	font-size: 11px; 
+	vertical-align: middle;
+	margin:2px;
+}
+
+.textarea,
+.searchinput,
+.button,
+.gobutton{
+	background: #FFF;
+	border: 1px solid #4C77B6;
+	color: #000;
+	font-family: Verdana, Helvetica, Sans-Serif, 宋体;
+	font-size: 12px;
+	padding: 2px;
+	vertical-align: middle;
+}
+	
+.button{
+	border:1px solid #4C77B6;
+	background-color: #DFE6EF;
+	font-size: 12px;
+	font-family: verdana, helvetica, sans-serif;
+	vertical-align: middle;
+	padding:0px;
+}
+
+.gobutton{
+	background: transparent;
+	border: 0;
+	color: #072A66;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.radiobutton,
+.checkbox,
+.helpbox { 
+	border: 0;
+	vertical-align: middle;
+}
+
+/* 
+ * class.formtable 
+ *
+ * used for tabled forms 
+ * technically tables should not be used for form display 
+ * but, in the case of IPB a table is easier to work with
+ * for the average webmaster, who has little to no CSS knowledge.
+ *
+ */
+
+.formtable{
+	background: transparent;
+}
+
+.formtable td,
+.pformleft,
+.pformleftw,
+.pformright{
+	background:#F5F9FD;
+	border: 1px solid #C2CFDF;
+	border-bottom: 0;
+	border-left: 0;
+	font-weight: bold;
+	margin: 1px 0 0 0;
+	padding: 6px;
+	width: 25%;
+} 
+
+.formtable td.wider,
+.pformleftw,
+.pformright{
+	width: 40%;
+}
+
+.formtable td.formright,
+.pformright{
+	border-right: 0;
+	font-weight: normal;
+	width: auto;
+} 
+
+.formtable td.formtitle,
+.formsubtitle{
+	background: #D1DCEB;
+	border: 1px solid #9FB9D4; 
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	font-weight: normal;
+}
+
+.formsubtitle{ 
+	border: 0;
+	color: #3A4F6C;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.formtable td.formstrip{
+	background: #DDE8F2;
+	border: 1px solid #9FB9D4;
+	border-left: 0;
+	border-right: 0;
+	font-weight: normal;
+}
+
+/* 
+ * ========================================
+ * new style quote and code wrappers MATT's DESIGN 
+ * ========================================
+ */
+
+.quotetop{
+	background: #E4EAF2 url(style_images/1/css_img_quote.gif) no-repeat right;
+	border: 1px dotted #000;
+	border-bottom: 0;
+	border-left: 4px solid #8394B2;
+	color: #000;
+	font-weight: bold;
+	font-size: 10px;
+	margin: 8px auto 0 auto;
+	padding: 3px;
+}
+
+.quotemain{
+	background: #FAFCFE;
+	border: 1px dotted #000;
+	border-left: 4px solid #8394B2;
+	border-top: 0;
+	color: #465584;
+	padding: 4px;
+	margin: 0 auto 8px auto;
+}
+
+.codetop,
+.sqltop,
+.htmltop{
+	background: #FDDBCC url(style_images/1/css_img_code.gif) no-repeat right;
+	color: #000;
+	font-weight: bold;
+	margin: 0 auto 0 auto;
+	padding: 3px;
+	width: 98%;
+}
+
+.codemain,
+.sqlmain,
+.htmlmain{
+	background: #FAFCFE;
+	border: 1px dotted #000;
+	color: #465584;
+	font-family: Courier, Courier New, Verdana, Arial;
+	margin: 0 auto 0 auto;
+	padding: 2px;
+	width: 98%;
+}
+
+/* 
+ * ========================================
+ * old school quote and code styles - backwards compatibility 
+ * ========================================
+ */
+
+#QUOTE,
+#CODE{  
+	background: #FAFCFE; 
+	border: 1px solid #000; 
+	color: #465584; 
+	font-family: Verdana, Arial, 宋体; 
+	font-size: 12px; 
+	padding: 2px; 
+	white-space: normal;
+}
+
+#CODE{ 
+	font-family: Courier, Courier New, Verdana, Arial, 宋体;
+}
+
+/* 
+ * ========================================
+ * All New Styles 
+ * ========================================
+ */
+.cleared{
+	clear: both;
+}
+
+.borderwrap,
+.borderwrapm{ /* this will affect the outlining border of all the tables and boxes through-out the skin. */
+	background: #FFF; 
+	border: 1px solid #072A66;
+	padding: 0; 
+	margin: 0; 
+}
+
+.borderwrapm{
+	margin: 5px;
+}
+
+.borderwrap h3,
+.maintitle,
+.maintitlecollapse{
+	background: transparent url(style_images/1/tile_cat.gif);
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #5176B5;
+	color: #FFF; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 8px;
+}
+
+.maintitlecollapse{
+	border: 1px solid #FFF;
+}
+
+.maintitle p,
+.maintitlecollapse p,
+.formsubtitle p{
+	background: transparent !important;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.maintitle p.expand,
+.maintitle p.goto,
+.maintitlecollapse p.expand,
+.formsubtitle p.members{
+	float: right;
+	width: auto !important;
+}
+
+.maintitle a:link, 
+.maintitle a:visited,
+.maintitlecollapse a:link, 
+.maintitlecollapse a:visited{ 
+	background: transparent;
+	color: #FFF;
+	text-decoration: none; 
+}
+
+.maintitle a:hover, 
+.maintitle a:active,
+.maintitlecollapse a:hover, 
+.maintitlecollapse a:active{ 
+	background: transparent;
+	color: #F1F1F1;
+}
+
+table th,
+.borderwrap table th,
+.subtitle,
+.subtitlediv,
+.postlinksbar{ 
+	background: transparent url(style_images/1/tile_sub.gif);
+	border-bottom: 1px solid #5176B5;
+	color: #3A4F6C; 
+	font-size: 12px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0; 
+	padding: 5px; 
+}
+
+.subtitlediv{
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #5176B5;
+	text-align: right;
+}
+
+.borderwrap table th a:link,
+.subtitle a:link,
+.subtitlediv a:link,
+.borderwrap table th a:visited,
+.subtitle a:visited, 
+.subtitlediv a:visited, 
+.borderwrap table th a:active,
+.subtitle a:active,
+.subtitlediv a:active,
+.borderwrap table th a:hover,
+.subtitle a:hover,
+.subtitlediv a:hover{ 
+	background: transparent;
+	color: #3A4F6C;
+	text-decoration: none; 
+}
+
+.borderwrap h4{
+	background: #DDE6F2;
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #5176B5;
+	border-top: 1px solid #5176B5;
+	color: #5176B5; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.borderwrap p{
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	margin: 5px;
+	padding: 10px;
+	text-align: left;
+}
+
+td.formbuttonrow,
+.borderwrap p.formbuttonrow,
+.borderwrap p.formbuttonrow1{
+	background: #D1DCEB !important; 
+	border: 1px solid #FFF;
+	border-top: 1px solid #5176B5;
+	margin: 0px !important;
+	padding: 5px !important;
+	text-align: center;
+}
+
+td.formbuttonrow{
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+.borderwrap p.formbuttonrow1{
+	background: #F9F9F9 !important;
+	border: 0;
+	border-top: 1px solid #CCC;
+}
+
+.bar,
+.barb,
+.barc{
+	background: #DFE6EF;
+	border: 1px solid #FFF;
+}
+
+.barc{
+	border-bottom: 0;
+}
+
+.bar p,
+.barb p,
+.barc p{
+	background: transparent;
+	border: 0;
+	color: #222;
+	font-size: 12px;
+	margin: 0;
+	padding: 5px;
+	text-align: left;
+}
+
+.barb p{
+	text-align: right;
+}
+
+.bar p.over,
+.bar p.overs,
+.barc p.over,
+.barc p.overs{
+	float: right;
+}
+
+.barb p.over,
+.barb p.overs{
+	float: left;
+}
+
+.bar p.overs,
+.barb p.overs,
+.barc p.overs{
+	position: relative;
+	top: 5px;
+}
+
+.catend{
+	background: #8394B2;
+	color: #000;
+	font-size: 1px;
+	height: 5px;
+}
+
+.newslink{
+	background: #F0F5FA;
+	border: 1px solid #C2CFDF;
+	margin: 0;
+	width: 100%;
+}
+
+.newslink td{
+	color: #222;
+	font-size: 12px;
+	padding: 5px 5px 5px 10px;
+}
+
+.newslink span{
+	background: transparent;
+	color: #072A66;
+	font-style: italic;
+	font-weight: normal;
+}
+
+.newslink input{
+	background: #FFF;
+	border: 1px solid #999;
+	color: #072A66;
+	font-size: 12px;
+	padding: 3px;
+	vertical-align: middle;
+	width: auto;
+}
+
+.newslink input.button{
+	background: transparent;
+	border: 0;
+	color: #072A66;
+	vertical-align: middle;
+}
+
+.fieldwrap{
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	border-top: 0;
+	margin: 5px;
+	padding: 0;
+	text-align: left;
+}
+
+.fieldwrap h4{
+	background: #EEE;
+	border: 1px solid #CCC;
+	border-left: 0;
+	border-right: 0;
+	color: #444; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.errorwrap,
+#pmnotewrap{
+	background: #F2DDDD;
+	border: 1px solid #992A2A;
+	border-top: 0;
+	margin: 5px;
+	padding: 0;
+}
+
+#pmnotewrap{
+	line-height: 135%;
+	margin: 0 0 5px 0;
+}
+
+.errorwrap h4,
+#pmnotewrap h4{
+	background: #E3C0C0;
+	border: 1px solid #992A2A;
+	border-left: 0;
+	border-right: 0;
+	color: #992A2A; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.errorwrap p,
+#pmnotewrap p{
+	background: transparent;
+	border: 0;
+	color: #992A2A;
+	margin: 0;
+	padding: 8px;
+}
+
+#pmnotewrap p.pmavatar{
+	float: left;
+}
+
+#pmnotewrap p.pmnotefoot{
+	background: #E3C0C0;
+	border-top: 1px solid #992A2A;
+	text-align: right;
+}
+
+#pmnotewrap a:link, 
+#pmnotewrap  a:visited{ 
+	background: transparent; 
+	color: #992A2A; 
+	text-decoration: underline;
+}
+
+#pmnotewrap a:hover, 
+#pmnotewrap a:active{
+	background: transparent; 
+	color: #992A2A; 
+	text-decoration: none;
+}
+
+.ruleswrap{
+	background: #F2DDDD;
+	border: 1px solid #992A2A;
+	color: #992A2A; 
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+#redirectwrap{
+	background: #F0F5FA;
+	border: 1px solid #C2CFDF;
+	margin: 200px auto 0 auto;
+	text-align: left;
+	width: 500px;
+}
+
+#redirectwrap h4{
+	background: #D0DDEA;
+	border-bottom: 1px solid #C2CFDF;
+	color: #3A4F6C;
+	font-size: 14px;
+	margin: 0;
+	padding: 5px;
+}
+
+#redirectwrap p{
+	margin: 0;
+	padding: 5px;
+}
+
+#redirectwrap p.redirectfoot{
+	background: #E3EBF4;
+	border-top: 1px solid #C2CFDF;
+	text-align: center;
+}
+
+
+#gfooter{
+	background: #8394B2;
+	margin: 5px 0 5px 0;
+	padding: 0;
+	width: 100%;
+}
+
+#gfooter td{
+	color: #FFF;
+	font-size: 12px;
+	padding: 4px;
+}
+
+#gfooter a:link,
+#gfooter a:visited{
+	color: #FFF;
+}
+
+#logostrip{ 
+	background: #3860BB url(style_images/1/tile_back.gif);
+	border: 1px solid #FFF;
+	height: 68px;
+	margin: 0;
+	padding: 0;
+}
+
+#submenu{ 
+	background: transparent url(style_images/1/tile_sub.gif);
+	border: 1px solid #FFF;
+	border-top: 0;
+	color: #3A4F6C; 
+	margin: 0; 
+}
+
+#userlinks,
+#userlinksguest{ 
+	background: #F0F5FA;
+	border: 1px solid #C2CFDF;
+	margin: 5px 0 5px 0;
+	padding: 0 5px 0 5px;
+}
+
+#userlinksguest{ 
+	background: #F4E7EA;
+	border: 1px solid #986265;
+}
+
+#submenu p,
+#userlinks p,
+#userlinksguest p{
+	background: transparent !important;
+	border: 0 !important;
+	font-size: 12px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0 !important;
+	padding: 7px 0 7px 0; 
+	text-align: right;
+}
+
+#userlinks p,
+#userlinksguest p{
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+#submenu p.home,
+#userlinks p.home,
+#userlinksguest p.home{
+	float: left;
+}
+
+#userlinksguest p.pcen{
+	text-align: center;
+}
+
+#submenu a:link, 
+#submenu  a:visited{ 
+	background: transparent; 
+	color: #3A4F6C; 
+	padding: 0 6px 0 6px;
+	text-decoration: none;
+}
+
+#submenu a:hover, 
+#submenu a:active{
+	background: transparent; 
+	color: #5176B5; 
+}
+#navstrip{ 
+	background: transparent;
+	color: #999;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+	padding: 8px 0 8px 0px; 
+}
+
+#navstrip a:link, 
+#navstrip  a:visited{ 
+	background: transparent; 
+	color: #222; 
+	text-decoration: none;
+}
+
+#navstrip a:hover, 
+#navstrip a:active{
+	background: transparent; 
+	color: #5176B5; 
+}
+
+.toplinks{
+	background: transparent;
+	color: #000;
+	margin: 0;
+	padding: 0 0 13px 0;
+	text-align: right;
+}
+
+.toplinks span{
+	background: #F0F5FA;
+	border: 1px solid #C2CFDF;
+	color: #000;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 10px 0 0;
+	padding: 5px;
+}
+
+.copyright{ 
+	background: #EEE;
+	font-size: 12px; 
+}
+
+/* 
+ * ========================================
+ * print page styles 
+ * ========================================
+ */
+
+#print{
+	margin: 20px auto 20px auto;
+	padding: 0;
+	text-align: left;
+	width: 85%;
+}
+
+#print h1,
+#print h2,
+#print h3,
+#print h4,
+#print p{
+	color: #036;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	padding: 8px;
+}
+
+#print h2,
+#print h3,
+#print p{
+	border-bottom: 1px solid #999;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+#print h3{
+	background: #F5F5F5;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+#print h4{
+	background: #F9F9F9;
+	font-size: 12px;
+}
+
+#print p{
+	margin: 0 0 5px 0;
+	padding: 10px;
+}
+
+#print p.printcopy{
+	border: 0;
+	color: #000;
+	text-align: center;
+}
+
+</style></head>
+ 
+
+<body>
+<div id="ipbwrapper">
+<center><b><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fshowtopic%3d105398"><font color="#ff0000" size="5">Lands the prompt password wrongly to look at here</font></a><br><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.eepic.net%2f">The eternal poem change corn, the new corn was 
+www.eepic.net, will ask everybody later to visit with this corn! 
+! !</a></b></center>
+<!--ipb.javascript.start-->
+<script type="text/javascript">
+<!--
+ var ipb_var_st       = "";
+ var ipb_lang_tpl_q1  = "请输入您想要前往的页数,介于 1 到";
+ var ipb_var_s        = "7a25825a7fcf953bab08669c1f4506dd";
+ var ipb_var_phpext   = "php";
+ var ipb_var_base_url = "http://www.gamerhome.net/main/index.php?s=7a25825a7fcf953bab08669c1f4506dd&amp;";
+ var ipb_input_f      = "156";
+ var ipb_input_t      = "152023";
+ var ipb_input_p      = "";
+ var ipb_var_cookieid = "";
+ var ipb_var_cookie_domain = "";
+ var ipb_var_cookie_path   = "/";
+ //-->
+</script>
+<script type="text/javascript" src="modificationOfMonstersOnMaps_files/ipb_global.js"></script>
+<!--ipb.javascript.end-->
+<div class="borderwrap">
+	<div id="logostrip"><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26"><!--ipb.logo.start--><img src="modificationOfMonstersOnMaps_files/logo4" style="vertical-align: top;" alt="Welcome you to visit SmartIPB.COM" border="0"><!--ipb.logo.end--></a></div>
+	<div id="submenu">
+		<p class="home"><!--ipb.leftlinks.start--><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.playerhome.com%2f"></a><!--IBF.RULES--><!--ipb.leftlinks.end--></p>
+		<p><!--ipb.rightlinks.start-->	<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dHelp"></a><b><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.eepic.net%2f"></a></b><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dHelp">
+The help</a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dSearch%26f%3d156">search</a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dMembers">user 
+tabulates</a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dcalendar">the calendar</a><!--IBF.CHATLINK--><!--IBF.TSLLINK-->
+		<!--ipb.rightlinks.end--></p>
+	</div>
+</div>
+<div id="userlinksguest">
+	<p class="pcen"><b>Welcome the tourist</b> ( <a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dLogin%26CODE%3d00">to land</a> | <a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dReg%26CODE%3d00">registration</a> )	</p>
+</div>
+<div id="navstrip"><img src="modificationOfMonstersOnMaps_files/nav" alt="&gt;" border="0">&nbsp;<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3didx">
+The game person's family</a>&nbsp;&gt;&nbsp;<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showforum%3d161">plays synthesizes the area</a>&nbsp;&gt;&nbsp;<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showforum%3d33">the evil spirit imaginary game special area</a>&nbsp;&gt;&nbsp;<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showforum%3d156">the evil spirit method MOD 
+manufacture</a></div>
+<!--IBF.NEWPMBOX-->
+<script type="text/javascript">
+<!--
+var ipb_lang_tt_prompt = "手动拷贝当前连接到这个帖子之后,将这个连接保存到您的剪贴板.";
+var ipb_lang_js_del_1  = "您确定要删除这篇文章么?";
+var ipb_lang_js_del_2  = "Ok,没有进行任何动作";
+var addquotebutton     = "style_images/1/p_mq_add.gif";
+var removequotebutton  = "style_images/1/p_mq_remove.gif";
+var unselectedbutton = "style_images/1/topic_unselected.gif";
+var selectedbutton   = "style_images/1/topic_selected.gif";
+var lang_gobutton    = "选择";
+var lang_suredelete  = "您确定想删除这些帖子么?";
+-->
+</script>
+<script type="text/javascript" src="modificationOfMonstersOnMaps_files/ipb_topic.js"></script>
+<a name="top"></a>
+
+<table cellspacing="0">
+	<tbody><tr>
+		<td style="padding-left: 0px;" nowrap="nowrap" valign="middle" width="40%"><div>&nbsp;</div></td>
+		<td class="nopad" style="padding: 0px 0px 5px;" align="right" valign="middle" width="60%"><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPost%26CODE%3d02%26f%3d156%26t%3d152023"><img src="modificationOfMonstersOnMaps_files/t_reply" alt="Replies this subject" border="0"></a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPost%26CODE%3d00%26f%3d156" title="Increases the subject"><img src="modificationOfMonstersOnMaps_files/t_new" alt="Publishes the new subject" border="0"></a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPost%26CODE%3d10%26f%3d156"><img src="modificationOfMonstersOnMaps_files/t_poll" alt="Starts to vote" border="0"></a><!--{IBF.START_NEW_POLL}--></td>
+	</tr>
+</tbody></table>
+<div class="borderwrap">
+	<div class="maintitle">
+		<p class="expand">
+			<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showtopic%3d152023%26mode%3dthreaded">
+
+
+
+Tree pattern</a> ·    [ <a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showtopic%3d152023%26mode%3dlinear">Standard pattern</a> ] ·
+			<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showtopic%3d152023%26mode%3dlinearplus">Linear enhancement +</a>
+		</p>
+		<p><img src="modificationOfMonstersOnMaps_files/nav_m" alt="&gt;" border="0" height="8" width="8">&nbsp;<b>
+Mm8leveleditor Please Read</b>, 
+translation of a thread</p>
+	</div>
+	<!--{IBF.POLL}-->
+	<div class="subtitle" align="right">
+		<div><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dusercp%26CODE%3dstart_subs%26method%3dtopic%26tid%3d152023">The track subject</a> | <a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dForward%26f%3d156%26t%3d152023">mails the subject</a> | <a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPrint%26client%3dprinter%26f%3d156%26t%3d152023">printing subject</a>
+		</div>
+	</div><!--Begin Msg Number 2668664-->
+<table cellspacing="1">
+	<tbody><tr>
+		<td class="row2" valign="middle" width="1%"><a name="entry2668664"></a><span class="normalname"><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showuser%3d167025">Yongfish</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"><img src="modificationOfMonstersOnMaps_files/icon1" alt=""> <img src="modificationOfMonstersOnMaps_files/to_post_off" alt="Post" style="padding-bottom: 2px;" border="0"> 
+05 years on May 6 15:06</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Publishes to:
+					<a title="Demonstrates this card the link" href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3dc75368d341c56aabd22ec0add2c83f5c%26showtopic%3d152023#" onclick="link_to_post(2668664); return false;">#1</a>				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="post2" valign="top">
+        	<span class="postdetails">
+        		<img src="modificationOfMonstersOnMaps_files/av-167025" alt="" border="0" height="130" width="110"><br><br>
+        		
+Swims the wife and children shrimp<br>
+        		<img src="modificationOfMonstersOnMaps_files/pip" alt="*" border="0"><img src="modificationOfMonstersOnMaps_files/pip" alt="*" border="0"><br><br>
+        		
+
+User group: Member<br>
+        		Publication total: 127<br>
+        		Registration date: 04 years on December 30<br>
+        		
+        		User serial number: 1.67,025 million<br><br>
+        		 
+        	</span><br>
+        	<img src="modificationOfMonstersOnMaps_files/spacer" alt="" height="1" width="160"><br> 
+       </td>
+       <td class="post2" valign="top" width="100%">
+			<!-- THE POST 2668664 -->
+			<div class="postcolor"><span style="font-size: 14pt; line-height: 100%;"><b>About MM7 map on biological revision<br><span style="color: blue;">Modification of Monsters on Maps</span></b></span><br><br>Transparent star,05 years on April 27 8:04 ]<br><span style="color: blue;">Auther: Transparent star (Transparent 
+Star) 05./04/27 million</span><br><br><b>* Ordinary monster group revision</b><br><b><span style="color: blue;">* Modification of Ordinary Monster Groups</span></b><br><br>So long as modified in mapstats.txt Mon1, 2, 3 is 
+good. For example changes jadeite island Mon1 by Dragonfly 
+Goblin, then meets on the jadeite island Long Yingjiu turned the big 
+ear to blame.<br><span style="color: blue;"></span><span style="color: blue;">Just change Mon1, Mon2, Mon3 in mapstats.txt. Eg. change
+the Mon1 of Emerald Island from Dragonfly to Goblin. You will 
+encounter Goblin instead of Dragonfly on the island.</span><br><br>ENC and the M1M2M3 percentage, is refers on the 
+map rests the time the percentage which meets the enemy probability 
+and each kind of monster appears. For example when Kazak 
+Mondale, rest has 10% probability to run into the enemy. If runs
+into the enemy, then 100% is the big ear is strange. If in 
+peaceful 塔利 Asia, time rest also has 10% probability to meet the 
+enemy. If meets the enemy, then 50% possibly is the archer, 50% 
+possibly is 索尔 the giant. The actual examination result also
+is this. If will breathe out Mondale ENC to change 100, Mon1 
+will change Fighter Plate, then will rest in the Kazak Mondale, 
+certainly will be able to meet the enemy, moreover will meet certainly
+will be the canned food. But ENC looks like in some places can 
+change because of the event occurrence, for example Kazak Mondale 
+castle, small fatigue cavern. Once completes the corresponding 
+task, cannot again run into the enemy in these place rests.<br><span style="color: blue;"></span><span style="color: blue;">ENC and the percentile of M1M2M3 represets the change of
+enermy encounter during resting and the probability of which monster 
+to encounter. Eg. in Harmondale, there's 10% chance of encountering 
+enermies during resting. And if there's such an encounter, for 100% it
+will be Goblins. On the other hand in Tatalia, there's also a 10% 
+chance of encountering enermies. And there's a 50% chance that the 
+energy is Archer, and 50% chance that the enermy is Troll.<br>If we change the ENC of Harmondale to be 100, and 
+change M1 to Fighter Plate, then we will surely encounter enermy 
+whenever rest in Harmondale, and the enermy will surely be the 
+Can-face loser.<br>However on some maps ENC is influenced by some events, 
+Eg. in Harmondale and in Wromthrax's Cave, we will no longer encounter
+enermies upon completion of certain quests.</span><br><br><b>* About map on special biological revision</b><br><span style="color: blue;"><b>* Modification of Special Monsters</b></span><br><br>The guard, NPC, have the fixed treasure the 
+monster, that two pitiful dragons and so on all belongs to the special
+biology. These special living thing many attributes not 
+events.lod in monsters.txt control.<br><span style="color: blue;"></span><span style="color: blue;">Guards, NPC, monsters carrying special items, the 2 
+pathetic dragons all belongs to special monsters.<br>Many properties of these special monsters are not 
+controlled by monsters.txt in events.lod.</span><br><br>First takes the jadeite island the guard takes the
+example, derives out01.ddm in games.lod, opens with u-edit, seeks 
+(special biology which "Guard" basis must revise to decide, for 
+example looks for NPC is "Peasant", after looks for jadeite island on 
+mountain these participants, then looks for "Swordsman"). The 
+following chart, behind "Guard" is this special living thing data. 
+In the chart buff color part is this special living thing forms 
+of defensive action, 00 is the fire, 01 is the air, 04 is physics, the
+blue color part is the striking power, "030,706" expresses the 3d7+6 
+striking power. The decadent part is the biological code 
+(corresponds monsters.txt), CE is Swordsman B, changes it D3, then 
+this guard can become peaceful Tanzania (Titan A). The 
+pessimistic part is this special living thing life value. Namely
+definitely may guard changes peaceful Tanzania but the life value only
+to have 1! The green part is coordinates, front is x, behind is 
+y. But did not know behind has duplicated why two. The 
+black frame colorless are partial is the goods which this special 
+living thing carries. If changes 91, after then kills this 
+monster, traces the corpse to pick certainly is the fireball weaponry.
+Changes the F8 01 pieces certainly to pick armor of the treasure
+governor. If is 00, then defers to in monsters.txt to process.<br><span style="color: blue;"></span><span style="color: blue;">Taking the Guard on Emerald Island as an example, 
+extract out01.ddm form games.lod, open with u-edit, search for "Guard"
+(Depends on the special monster you want to modify, Eg NPC is 
+"Peasant", other contestants on the hill are "Swordsman"). <br>Look at the diagram below, after "Guard" is the data 
+for the special monster. The section in light yellow is the monster's 
+attack type, 00 for Fire, 01 for Air, 04 for Physical; The 
+section in blue is the damage, "03 07 06" stands for 3d7+6; The
+section in yellow is the monster code (refer to monster.txt), CE is 
+Swordman, if you change it to D3, then the guard will be Titan (Titan 
+A). The section in grey is the HP of the special monster. So you may 
+change the HP of the Titan guard to 1! The section in green is 
+the coordinates, X in front, Y at back. but wondering why it is 
+repeated twice behind. The section in the non-coloured black box is 
+the item carried by this monster. If set to 91, you will defeinately 
+get a Fireball Wand by disposing the corpse. Set to F8 01 you will get
+Governer's Armor. If set to 00, it will follow the setting in 
+monsters.txt.</span><br><br>Again takes the jadeite island dragon hole to take
+the example, derives d28.dlv in games.lod, opens with u-edit. 
+Seeks "Red Dragon", like chart. The buff color part is the
+forms of defensive action, 00 is the fire. The blue color are 
+partial "100,800" expression striking power 16d8. Yellow "1B" 
+expressed this living thing (contour) is the red dragon flour. 
+The pessimistic part is the life value, the 0514h namely 1,300 
+lives. Depositing brings the goods in the place chart not to 
+express, but its relative position is same with the above example, 
+after the revision may control the red dragon flour treasure.<br><span style="color: blue;"></span><span style="color: blue;">Now take the dragon cave on Emerald Island as an 
+example, extract d28.dlv form games.lod, open with u-edit. Search for 
+"Red Dragon", as shown in the diagram. The section in light yellow is 
+the monster's attack type, 00 for Fire. The section in blue "10 08 00"
+means damage 16d8. The section in yellow "1B" tells that the monster 
+(its looking) is Red Dragon. The section in grey is the HP, 0514h 
+means 1300. The section in for carried item is not visible on the 
+diagram, but the relative position is exactly the same as the previous
+example, You can modify it to control the item drops.</span><br><br><!--Image http://193.60.77.232/cg304/bl/fctt.jpg--><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2f193.60.77.232%2fcg304%2fbl%2ffctt.jpg" target="_blank"><img src="modificationOfMonstersOnMaps_files/fctt.jpg" alt="User publication image" onload="javascript:if(this.width>(screen.width*0.8-400)) this.width=(screen.width*0.8-400)" border="0"></a><!--End Image--><br>
+On in the chart I increased a guard on the jadeite 
+island, also all changes them peaceful Tanzania.<br><span style="color: blue;"></span><span style="color: blue;">In the above diagram I have inserted a guard on Emerald 
+Island, and changed all guards to Titans.</span><br><br>Other data I do not have to analyze with enough 
+time, for example is friendly or is hostile? Defense rank? 
+The motion pattern is short, long or stand is motionless? 
+May discharge black magic?<br><span style="color: blue;"></span><span style="color: blue;">I didn't have time to analyse other data yet, Eg. 
+friendly or hostile? Move mode is short, long or atand? 
+The spells they can cast?</span><br><br><b></b><span style="color: blue;"></span><b>* About map on special biological increase</b><br><span style="color: blue;"><b>* Insertion of Special Monsters</b></span><br><br>Take the jadeite island as the example, derives 
+out01.ddm in games.lod, opens with u-edit, first casually seeks a 
+special living thing, duplicates its all codes, certainly wants the 
+integrity. For example selects "Guard", but behind deposits is 
+"Peasant", then duplicates time must start from first letter "G" 
+continuously to a "Peasant" "P" front character. Then will 
+duplicate the code will insert (increase) to some special living thing
+in front of. For example may directly insert to "Peasant" "P" in
+front of. Soon this "Guard" information much has duplicated. 
+Certainly, red dragon flour data copy down duplicates dragon 
+hole d28.dlv in jadeite island out01.ddm to come up also is may.<br><span style="color: blue;"></span><span style="color: blue;">Taking Emerald Island as an example, extract out01.ddm 
+form games.lod, open with u-edit, look for any special monster, copy 
+all the codes, must be complete. Eg. choose a "Guard", and behind is a
+"Peasant", Then you shall copy form the first letter "G" to the
+byte just before the "P" of "Peasant". then insert the copied code in 
+front of a special monster. Eg. the "P" of the "Peasant". Then we have
+on more copy of "Guard". Of course you can copy the Red Dragon in the 
+Dragon Cave d28.dlv to Emerald Island out01.ddm.</span><br><br>The revision duplicated a moment ago the 
+biological data, changed it the biology which you wanted, appeared the
+place (coordinates), the striking power and so on.<br><span style="color: blue;"></span><span style="color: blue;">Modify the copied monster, change it to monster you 
+want, the location (coordinates), damage and so on.</span><br><br>Some point very is also important - found in this 
+document to store the first special biological data the place, in 
+front of it the 4th byte place, is depositing this map special biology
+integer, the jadeite island is "20", namely the expression has 32 
+special living thing. This value also wants the similar 
+increase. If you increase 1 special living thing, then changes 
+"21".<br><span style="color: blue;"></span><span style="color: blue;">One more important thing - look for the place where the 
+first special monster is store, 4 bytes before it there is a integer 
+indicating the total number of special monsters, Eg. "20" for Emerald 
+Island, which means 32 sepcail monsters. You must increment this 
+number. If you want to add 1 more monster, set it to "21".</span><br><br>Moreover also has a simple method, is only 
+suitable for no valuable box, does not have NPC the map. The 
+biology in you which is the use has revised summons the black magic 
+which to want the place summons you to want. Then scatters it 
+permanently to let it keep on the map. Saves the plate, derives 
+the corresponding map document from the archive, again inducts to 
+games.lod in.<br><span style="color: blue;"></span><span style="color: blue;">There's a shortcut, only suitable for maps without chest
+and NPC. Use the modified summon magic to summon the monster you want,
+then cast a "Dispel" on it to make it stay on the map permanently. 
+Save, extract the corresponding mapfile from the sav, the import into 
+games.lod.</span> <!--IBF.ATTACHMENT_2668664--></div>
+				
+			<!-- THE POST -->
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style="text-align: left;"><img src="modificationOfMonstersOnMaps_files/p_online" alt="This user on-line!" border="0"><a href="javascript:PopUp('http://www.gamerhome.net/main/index.php?s=7a25825a7fcf953bab08669c1f4506dd&act=Profile&CODE=showcard&MID=167025','AddressCard','600','300','0','1','1','1')" title="Examination relation card"><img src="modificationOfMonstersOnMaps_files/p_card" alt="The material speed-searches" border="0"></a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dMsg%26CODE%3d04%26MID%3d167025"><img src="modificationOfMonstersOnMaps_files/p_pm" alt="Transmission short note" border="0"></a><!--<a href="http://www.gamerhome.net/main/index.php?s=7a25825a7fcf953bab08669c1f4506dd&amp;act=Mail&amp;CODE=00&amp;MID=167025"><img src='style_images/1/p_email.gif' border='0'  alt='发送邮件' /></a>--></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src="modificationOfMonstersOnMaps_files/p_up" alt="Changes to the crown" border="0"></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3dc75368d341c56aabd22ec0add2c83f5c%26showtopic%3d152023#" onclick="multiquote_add(2668664); return false;" title="The cut increases the multiple quotation"><img src="modificationOfMonstersOnMaps_files/p_mq_add" name="mad_2668664" alt="Increases the full text quotation"></a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPost%26CODE%3d02%26f%3d156%26t%3d152023%26qpid%3d2668664" title="The fast reply should paste"><img src="modificationOfMonstersOnMaps_files/p_quote" alt="Quotation card" border="0"></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2"><!-- no content --></td>
+</tr>
+</tbody></table><!--Begin Msg Number 2670146-->
+<table cellspacing="1">
+	<tbody><tr>
+		<td class="row2" valign="middle" width="1%"><a name="entry2670146"></a><span class="normalname"><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showuser%3d213649"> 
+
+
+
+
+
+
+
+Mm8leveleditor</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src="modificationOfMonstersOnMaps_files/to_post_off" alt="Post" style="padding-bottom: 2px;" border="0"> 
+05 years on May 6 21:37</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Publishes to:
+					<a title="Demonstrates this card the link" href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3dc75368d341c56aabd22ec0add2c83f5c%26showtopic%3d152023#" onclick="link_to_post(2670146); return false;">#2</a>				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="post1" valign="top">
+        	<span class="postdetails">
+        		<br><br>
+        		
+Swims the family traveler<br>
+        		<img src="modificationOfMonstersOnMaps_files/pip" alt="*" border="0"><br><br>
+        		
+User group: Member<br>
+        		Publication total: 12<br>
+        		Registration date: 05 years on May 4<br>
+        		
+        		User serial number: 2.13,649 million<br><br>
+        		 
+        	</span><br>
+        	<img src="modificationOfMonstersOnMaps_files/spacer" alt="" height="1" width="160"><br> 
+       </td>
+       <td class="post1" valign="top" width="100%">
+			<!-- THE POST 2670146 -->
+			<div class="postcolor"><!--QuoteBegin-Yongfish+05年5月6日 2:06--><div class="quotetop">QUOTE (Yongfish @ 05 years on May 6 2:06)</div><div class="quotemain"><!--QuoteEBegin--><span style="font-size: 14pt; line-height: 100%;"><b>About MM7 map on biological revision<br><span style="color: blue;">Modification of Monsters on Maps</span></b></span><br><br>Transparent star,05 years on April 27 8:04 ]<br><span style="color: blue;">Auther: Transparent star (Transparent 
+Star) 05./04/27 million</span><br><br><span style="color: blue;">Taking the Guard on Emerald Island as an 
+example, extract out01.ddm form games.lod, open with u-edit, search 
+for "Guard" (Depends on the special monster you want to modify, Eg NPC
+is "Peasant", other contestants on the hill are "Swordsman"). <br>Look at the diagram below, after "Guard" is the data 
+for the special monster. The section in light yellow is the monster's 
+attack type, 00 for Fire, 01 for Air, 04 for Physical; The 
+section in blue is the damage, "03 07 06" stands for 3d7+6; The
+section in yellow is the monster code (refer to monster.txt), CE is 
+Swordman, if you change it to D3, then the guard will be Titan (Titan 
+A). The section in grey is the HP of the special monster. So you may 
+change the HP of the Titan guard to 1! The section in green is 
+the coordinates, X in front, Y at back. but wondering why it is 
+repeated twice behind. The section in the non-coloured black box is 
+the item carried by this monster. If set to 91, you will defeinately 
+get a Fireball Wand by disposing the corpse. Set to F8 01 you will get
+Governer's Armor. If set to 00, it will follow the setting in 
+monsters.txt.</span><br><br><br><span style="color: blue;">Now take the dragon cave on Emerald Island as an
+example, extract d28.dlv form games.lod, open with u-edit. Search for 
+"Red Dragon", as shown in the diagram. The section in light yellow is 
+the monster's attack type, 00 for Fire. The section in blue "10 08 00"
+means damage 16d8. The section in yellow "1B" tells that the monster 
+(its looking) is Red Dragon. The section in grey is the HP, 0514h 
+means 1300. The section in for carried item is not visible on the 
+diagram, but the relative position is exactly the same as the previous
+example, You can modify it to control the item drops.</span><br><br><br><div align="right"><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fact%3dfindpost%26pid%3d2668664"><img src="modificationOfMonstersOnMaps_files/post_snapback" alt="*" border="0"></a></div><br><!--QuoteEnd--></div><!--QuoteEEnd--><br><br><br>
+For MM6, (all offsets relative to start of creature 
+data)<br><br><br>    Private static final int CREATURE_MOUSEOVER_NAME_OFFSET 
+= 0;<br>    Private static final int CREATURE_MOUSEOVER_NAME_MAX_LENGTH = 
+32;<br>    <br>    Private static final int ATTITUDE_STATUS_AFRAID = 0x80; //
+high bit<br>    Private static final int ATTITUDE_STATUS_OFFSET = 37; 
+// 1 bytes?<br>    <br>    Private static final int CURRENT_HP_OFFSET = 40; // 4 
+bytes?<br>    <br>    Private static final int X_COORD_OFFSET = 126; // 2 bytes<br>    Private static final int Y_COORD_OFFSET = 128; //
+2 bytes<br>    Private static final int Z_COORD_OFFSET = 130; //
+2 bytes<br><br>    Private static final int X_MIN_BOUNDS_COORD_OFFSET = 
+146; // 2 bytes<br>    Private static final int Y_MIN_BOUNDS_COORD_OFFSET = 
+148; // 2 bytes<br>    Private static final int Z_MIN_BOUNDS_COORD_OFFSET = 
+150; // 2 bytes<br><br>    Private static final int X_MAX_BOUNDS_COORD_OFFSET = 
+152; // 2 bytes<br>    Private static final int Y_MAX_BOUNDS_COORD_OFFSET = 
+154; // 2 bytes<br>    Private static final int Z_MAX_BOUNDS_COORD_OFFSET = 
+156; // 2 bytes<br><br>    // 5 is dead, 4 seems like it too<br>    Private static final int CONDITION_OFFSET = 160; 
+// 2 bytes<br> <!--IBF.ATTACHMENT_2670146--></div>
+				
+			<!-- THE POST -->
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style="text-align: left;"><img src="modificationOfMonstersOnMaps_files/p_online" alt="This user on-line!" border="0"><a href="javascript:PopUp('http://www.gamerhome.net/main/index.php?s=7a25825a7fcf953bab08669c1f4506dd&act=Profile&CODE=showcard&MID=213649','AddressCard','600','300','0','1','1','1')" title="Examination relation card"><img src="modificationOfMonstersOnMaps_files/p_card" alt="The material speed-searches" border="0"></a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dMsg%26CODE%3d04%26MID%3d213649"><img src="modificationOfMonstersOnMaps_files/p_pm" alt="Transmission short note" border="0"></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src="modificationOfMonstersOnMaps_files/p_up" alt="Changes to the crown" border="0"></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3dc75368d341c56aabd22ec0add2c83f5c%26showtopic%3d152023#" onclick="multiquote_add(2670146); return false;" title="The cut increases the multiple quotation"><img src="modificationOfMonstersOnMaps_files/p_mq_add" name="mad_2670146" alt="Increases the full text quotation"></a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPost%26CODE%3d02%26f%3d156%26t%3d152023%26qpid%3d2670146" title="The fast reply should paste"><img src="modificationOfMonstersOnMaps_files/p_quote" alt="Quotation card" border="0"></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2"><!-- no content --></td>
+</tr>
+</tbody></table><!-- END TABLE --><!-- TABLE FOOTER -->
+<div class="barc">
+	<div style="padding: 5px 5px 0pt 0pt; float: right;"><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showtopic%3d152023%26view%3dold" style="text-decoration: none;"> 
+
+
+
+
+
+
+
+□ previous subject</a>
+	· <a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showforum%3d156" style="font-weight: bold; text-decoration: none;">Evil spirit method MOD manufacture</a>
+	· <a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26showtopic%3d152023%26view%3dnew" style="text-decoration: none;">Next subject □</a></div>
+	<div>
+		<form action="http://babelfish.altavista.com/babelfish/trurl_pagecontent" method="post" name="search"><input name="lp" value="zh_en" type="hidden"><input name="trurl" value="http://www.gamerhome.net/main/index.php?s=7a25825a7fcf953bab08669c1f4506dd" type="hidden">
+			<input name="forums" value="156" type="hidden">
+			<input name="topic" value="152023" type="hidden">
+			<input name="act" value="Search" type="hidden">
+			<input name="CODE" value="searchtopic" type="hidden">
+			<input size="25" name="keywords" class="searchinput" value="输入关键字" onfocus="this.value = '';" type="text">&nbsp;
+			<input value="搜索主题" class="button" type="submit">
+		</form>
+	</div>
+</div>
+</div>
+<br><table cellspacing="0">
+	<tbody><tr>
+		<td style="padding-left: 0px;" nowrap="nowrap" valign="middle" width="30%"><div></div></td>
+		<td class="nopad" style="padding: 5px 0px;" align="right" width="70%"><!--IBF.QUICK_REPLY_CLOSED--><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPost%26CODE%3d02%26f%3d156%26t%3d152023"><img src="modificationOfMonstersOnMaps_files/t_reply" alt="Replies this subject" border="0"></a><a href="javascript:ShowHide('topic_open','topic_closed')" title="Open subject option"><img src="modificationOfMonstersOnMaps_files/t_options" alt="Subject option" border="0"></a><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPost%26CODE%3d00%26f%3d156" title="Increases the subject"><img src="modificationOfMonstersOnMaps_files/t_new" alt="Publishes the new subject" border="0"></a><!--<a href="http://www.gamerhome.net/main/index.php?s=7a25825a7fcf953bab08669c1f4506dd&amp;act=Post&amp;CODE=10&amp;f=156"><img src='style_images/1/t_poll.gif' border='0'  alt='开始投票' /></a>--></td>
+	</tr>
+</tbody></table>
+<div class="borderwrap">
+	<div class="formsubtitle" style="padding: 4px;">
+
+
+
+
+1 user is glancing over this subject (1 tourist and 0 
+stealth users)</div>
+	<div class="row1" style="padding: 4px;">0 users: </div>
+</div>
+
+<!--IBF.QUICK_REPLY_OPEN-->
+<div id="topic_open" style="display: none; z-index: 2;">
+	<br>
+	<div class="borderwrap">
+		<div class="maintitle"><img src="modificationOfMonstersOnMaps_files/nav_m" alt="&gt;" border="0" height="8" width="8">&nbsp;<a href="javascript:ShowHide('topic_open','topic_closed')"></a><a href="javascript:ShowHide('topic_open','topic_closed')">
+Closure subject option</a></div>
+		<div class="tablepad">
+			<b><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dTrack%26f%3d156%26t%3d152023">Tracks this subject</a></b><br>
+			<span class="desc">When you not when forum may receive the email 
+to inform this subject the new reply</span><br><br>
+			<b><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dTrack%26f%3d156%26type%3dforum"></a></b><span class="desc"></span><b><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dTrack%26f%3d156%26type%3dforum">Subscribes this edition block</a></b><br>
+			<span class="desc">When you not when forum may receive the email 
+to inform this edition block the new article</span><br><br>
+			<b><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPrint%26client%3dchoose%26f%3d156%26t%3d152023"></a></b><span class="desc"></span><b><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2findex.php%3fs%3d7a25825a7fcf953bab08669c1f4506dd%26act%3dPrint%26client%3dchoose%26f%3d156%26t%3d152023">Downloading/prints in this subject the article</a></b><br>
+			<span class="desc">Downloads this article the different form or 
+the printing edition</span>
+		</div>
+	</div>
+</div>
+<div class="borderwrap">
+	<div class="row2" style="padding: 5px;">
+		
+		<div align="right"><form onsubmit="if(document.jumpmenu.f.value == -1){return false;}" action="http://babelfish.altavista.com/babelfish/trurl_pagecontent" method="get" name="jumpmenu"><input name="lp" value="zh_en" type="hidden"><input name="trurl" value="http://www.gamerhome.net/main/index.php?s=7a25825a7fcf953bab08669c1f4506dd" type="hidden"><input name="act" value="SF" type="hidden">
+			             <input name="act" value="SF" type="hidden">
+<input name="s" value="7a25825a7fcf953bab08669c1f4506dd" type="hidden">
+			             <select name="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.jumpmenu.submit() }" class="dropdown"><optgroup label="网站转向"><option value="sj_home">Forum home page</option><option value="sj_search">Search</option><option value="sj_help">Help</option></optgroup><optgroup label="前往版块"><option value="161">Game comprehensive area</option><option value="2">&nbsp;&nbsp;|-- computer games area</option><option value="3">&nbsp;&nbsp;|---- diablo2</option><option value="8">&nbsp;&nbsp;The |---- evil spirit beast strives for hegemony</option><option value="144">&nbsp;&nbsp;|---- evil spirit beastly map version</option><option value="60">&nbsp;&nbsp;|---- wrestle game</option><option value="5">&nbsp;&nbsp;The |---- interspace strives for hegemony</option><option value="4">&nbsp;&nbsp;|---- CS discussion version</option><option value="57">&nbsp;&nbsp;|---- honorably plays the special version</option><option value="68">&nbsp;&nbsp;|---- simulator game</option><option value="75">&nbsp;&nbsp;The |---- big space plays the special version</option><option value="82">&nbsp;&nbsp;|---- music game</option><option value="119">&nbsp;&nbsp;|---- big navigation time</option><option value="120">&nbsp;&nbsp;|---- three countries subjects game</option><option value="58">&nbsp;&nbsp;|---- Warring States game</option><option value="28">&nbsp;&nbsp;The |---- computer games synthesizes</option><option value="17">&nbsp;&nbsp;|-- network game area</option><option value="132">&nbsp;&nbsp;|---- evil spirit beastly world (wow)</option><option value="147">&nbsp;&nbsp;|---- vigor dance group</option><option value="80">&nbsp;&nbsp;|---- fantasizes Spring and Autumn Period OL</option><option value="157">&nbsp;&nbsp;|---- rivers and lakes</option><option value="131">&nbsp;&nbsp;|---- heaven 2</option><option value="19">&nbsp;&nbsp;|---- miracle (MU)</option><option value="20">&nbsp;&nbsp;|---- legend</option><option value="23">&nbsp;&nbsp;|---- star of OL illusion</option><option value="126">&nbsp;&nbsp;|---- chivalry road</option><option value="67">&nbsp;&nbsp;|---- knight-errant swordsman 情缘 OL</option><option value="66">&nbsp;&nbsp;|---- fairyland fable (RO)</option><option value="134">&nbsp;&nbsp;|---- froth hall</option><option value="95">&nbsp;&nbsp;|---- my clever strange OL</option><option value="61">&nbsp;&nbsp;|---- letter Nagano looks OL</option><option value="171">&nbsp;&nbsp;|---- 天骄 2</option><option value="170">&nbsp;&nbsp;|---- Stone Age</option><option value="137">&nbsp;&nbsp;|---- inexhaustible duty (EQ2)</option><option value="27">&nbsp;&nbsp;The |---- net swims the synthesis</option><option value="33">&nbsp;&nbsp;|-- evil spirit imaginary game special area</option><option value="156" selected="selected">&nbsp;&nbsp;|---- evil spirit method MOD manufacture</option><option value="34">&nbsp;&nbsp;|---- DND subject</option><option value="35">&nbsp;&nbsp;|---- evil spirit method series</option><option value="90">&nbsp;&nbsp;Front the |---- hero is invincible does</option><option value="36">&nbsp;&nbsp;The |---- hero is invincible 3</option><option value="37">&nbsp;&nbsp;The |---- hero is invincible 4</option><option value="127">&nbsp;&nbsp;The |---- hero is invincible in front of 5 to 
+gaze the report</option><option value="89">&nbsp;&nbsp;|---- hero invincible combat report</option><option value="38">&nbsp;&nbsp;|---- WOG forum</option><option value="39">&nbsp;&nbsp;|---- map guild</option><option value="40">&nbsp;&nbsp;|---- 奇幻 literature</option><option value="9">&nbsp;&nbsp;|-- home use machine game area</option><option value="10">&nbsp;&nbsp;|---- machine war forum</option><option value="12">&nbsp;&nbsp;|---- finally fantasized</option><option value="111">&nbsp;&nbsp;|---- oriental cherry war</option><option value="169">&nbsp;&nbsp;|---- biochemistry crisis series</option><option value="167">&nbsp;&nbsp;|---- devil city series</option><option value="29">&nbsp;&nbsp;|---- home use machine synthesis</option><option value="163">&nbsp;&nbsp;|-- comprehensive entertainment area</option><option value="44">&nbsp;&nbsp;|---- pastes the chart special version</option><option value="46">&nbsp;&nbsp;|---- sentiment discussion</option><option value="43">&nbsp;&nbsp;|---- entertainment life</option><option value="45">&nbsp;&nbsp;|---- video and music special version</option><option value="74">&nbsp;&nbsp;|---- fills the water district</option><option value="77">&nbsp;&nbsp;|---- sports topic</option><option value="65">&nbsp;&nbsp;|---- game literature</option><option value="22">&nbsp;&nbsp;|---- lonesome and quiet aural understanding 
+version</option><option value="168">&nbsp;&nbsp;The |-- populace play the net</option><option value="172">&nbsp;&nbsp;|---- information center</option><option value="173">&nbsp;&nbsp;|---- single plane game</option><option value="174">&nbsp;&nbsp;|---- downloads the special area</option><option value="175">&nbsp;&nbsp;|---- hardware special area</option><option value="176">&nbsp;&nbsp;|---- electron athletics</option><option value="178">&nbsp;&nbsp;|---- short note platform</option><option value="165">Animation area</option><option value="112">&nbsp;&nbsp;|-- fire shade enduring</option><option value="145">&nbsp;&nbsp;|-- fire shade literature</option><option value="143">&nbsp;&nbsp;|-- 海贼 king</option><option value="122">&nbsp;&nbsp;炼金术 of teacher |-- steel</option><option value="115">&nbsp;&nbsp;|-- reaches as high as the series</option><option value="117">&nbsp;&nbsp;|-- Europe and America animation</option><option value="42">&nbsp;&nbsp;|-- animation composite plate</option><option value="130">&nbsp;&nbsp;|-- god of death BLEACH</option><option value="164">The mass organization is comprehensive</option><option value="158">&nbsp;&nbsp;|-- stew area</option><option value="123">&nbsp;&nbsp;The |---- new person answers questions</option><option value="106">&nbsp;&nbsp;|---- stew forum</option><option value="121">&nbsp;&nbsp;|---- food and drink committee</option><option value="64">&nbsp;&nbsp;The |---- game revises</option><option value="62">&nbsp;&nbsp;|---- computer knowledge version</option><option value="124">&nbsp;&nbsp;|---- numerical code photography version</option><option value="162">&nbsp;&nbsp;|-- family team area</option><option value="129">&nbsp;&nbsp;|---- Jiaxing net pledge</option><option value="146">&nbsp;&nbsp;|---- bloodshed alliance</option><option value="155">&nbsp;&nbsp;|---- Beijing wow trade union</option><option value="48">&nbsp;&nbsp;|---- vertically and horizontally</option><option value="49">&nbsp;&nbsp;|---- anemia pledge</option><option value="91">&nbsp;&nbsp;|---- EE 兄弟会 ruins</option><option value="100">&nbsp;&nbsp;|------ EE manager exchange center ruins</option><option value="101">&nbsp;&nbsp;|---- intimate friend Chinese style pavilion</option><option value="50">&nbsp;&nbsp;Family of the |---- wind</option><option value="142">&nbsp;&nbsp;|---- homeland</option><option value="41">&nbsp;&nbsp;|---- rivers and lakes discussion version</option><option value="166">&nbsp;&nbsp;|-- big naval battle club</option><option value="152">&nbsp;&nbsp;|---- club news</option><option value="133">&nbsp;&nbsp;|---- ten thousand favorable fleets</option><option value="154">&nbsp;&nbsp;|---- nine-headed bird fleet</option><option value="148">&nbsp;&nbsp;|---- ocean bridge fleet</option><option value="83">&nbsp;&nbsp;|-- = PEK = new Beijing fleet</option><option value="59">&nbsp;&nbsp;|---- fleet daily business</option><option value="110">&nbsp;&nbsp;|---- fleet archive office</option><option value="141">&nbsp;&nbsp;|-- 辰 maple tree fleet</option><option value="149">&nbsp;&nbsp;|---- fleet daily business</option><option value="150">&nbsp;&nbsp;|---- fleet archive office</option><option value="151">&nbsp;&nbsp;|---- manages the conference room</option><option value="159">&nbsp;&nbsp;|---- enlisted woman world</option><option value="30">&nbsp;&nbsp;|-- three countries hypothesized communities</option><option value="31">&nbsp;&nbsp;|---- practices wushu the hall</option><option value="32">&nbsp;&nbsp;|---- Wen Huage</option><option value="103">&nbsp;&nbsp;|---- green Lin Jun</option><option value="160">Administrative district</option><option value="1">&nbsp;&nbsp;Stationmaster |-- work room</option><option value="78">&nbsp;&nbsp;|-- announces the area</option></optgroup></select>&nbsp;<input value="提交" class="button" type="submit"></form></div>
+	</div>
+</div>
+<br><!--TASK--><img src="modificationOfMonstersOnMaps_files/index.gif" border="0" height="1" width="1"><!--ETASK-->
+<table id="gfooter" cellspacing="0">
+	<tbody><tr>
+		<td width="45%"> </td>
+		<td align="center" nowrap="nowrap" width="10%"><a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.gamerhome.net%2fmain%2flofiversion%2findex.php%2ft152023.html"><b>简约 style</b></a></td>
+		<td align="right" nowrap="nowrap" width="45%">Now time: 05 years on May 6 22:28</td>
+	</tr>
+</tbody></table>
+ 
+<!-- Copyright Information -->
+
+<div class="copyright" align="center">Powered by <a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.invisionboard.com%2f" target="_blank">Invision Power 
+Board</a>(Trial) v2.0.3  © 2,005 &nbsp;<a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.invisionpower.com%2f" target="_blank">IPS, Inc.</a></div><div class="copyright" align="center">SmartIPB v1.4.0.8 [ L ] © Developed By <a href="http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=zh_en&amp;trurl=http%3a%2f%2fwww.smartipb.com%2f">www.smartipb.com</a></div>
+</div>
+<!-- bff102.search.scd.yahoo.com compressed/chunked Fri May  6 07:22:42 PDT 2005 --></body></html>

@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<!--
+  Copyright 2002-2004 The Apache Software Foundation
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<status>
+
+  <developers>
+    <person name="Mike Kienenberger"      email="mkienenb@gmail.com"      id="mkienenb" />
+    <!-- Add more people here -->
+  </developers>
+
+  <changes>
+    <!-- Add new releases here -->
+    
+    <release version="3.48" date="unreleased - in CVS">
+      <!-- Some action types have associated images. By default, images are
+      defined for 'add', 'fix', 'remove', 'update' and 'hack'. If you add
+      src/documentation/resources/images/<foo>.jpg images, these will
+      automatically be used for entries of type <foo>. -->
+
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+            <li></li>
+        </ul>
+      </action>
+      <!-- Sample action:
+      <action dev="mkienenb" type="fix" due-to="Joe Contributor"
+          due-to-email="joec@apache.org" fixes-bug="123">
+          Fixed a bug in the Foo class.
+        </action>
+        -->
+    </release>
+    <release version="3.47" date="July 31, 2005">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+            <li>Added Russian translation (Skraelos).</li>
+            <li>Decoded MM6, MM7, and MM8 creature data.</li>
+            <li>Decoded MM8 ddm and dlv file layout.</li>
+            <li>Fixed bug where MM8 odm files were hitting an OutOfMemory error while trying to load as an MM7 odm file.</li>
+            <li>Decoded MM7 ddm and dlv file layout.</li>
+            <li>Decoded Item info.</li>
+            <li>Decoded Door info in dlv files.</li>
+            <li>Decoded and displayed contained item data for MM7 and MM8.</li>
+            <li>Decoded and displayed room data.</li>
+            <li>Display indoor facet vertex attribute lists</li>
+            <li>Decoded extra indoor facet data</li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.46" date="July 15, 2005">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+            <li>Fixed bug where tree view breaks if there were list.size() % 10 = 1 entries.</li>
+            <li>Decoded more of the blv format: Facets, Rooms, general, BSPNodes (with help from Angel_Death).</li>
+            <li>Added first-draft of Chinese localization (with help from YongFish).</li>
+            <li>Added support for MM7 and MM8 odm files.</li>
+            <li>Decoding of D3Object, D3Object's Facets, Sprites, and SpawnPoints (formerly Monsters) in odm files.</li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.45" date="July 07, 2005">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+            <li>Created new treeview for displaying resources with minimal memory usage.</li>
+            <li>Switched Dsft.bin, blv, odm, dlv, ddm to new tree view</li>
+            <li>Decoded dungeon bits, last time visited, sky bitmap name, day attributes, fog range in ddm and dlv files.</li>
+            <li>Decoded DTile.bin</li>
+            <li>Decoded odm TileSetSelectors</li>
+            <li>Decoded mapResetCount and lastResetDay for dlv and ddm files (Fenghou)</li>
+            <li>Decoded Map Outline Lines</li>
+            <li>Fix bug where files named differently from entry names could not be quick-append updated. (Yongfish)</li>
+            <li>Improved tree control to better handle lists and partial lists of items </li>
+            <li>Decoded Doverlay.bin, DObjList.bin, DMonList.bin, DDecList.bin, DChest.bin</li>
+            <li>mm7 and mm8 support for DSft.bin</li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.44" date="May 15, 2005">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+          <li>Decoded "artifact found" bits in saved game.</li>
+          <li>Decoded item held on cursor when saving game.</li>
+          <li>Decoded Chest Unknown1 (DChest id -- picture)</li>
+          <li>Converted docs to xdoc format and used Apache Forrest to generate website.</li>
+          <li>Decoded several creature fields based the monster.txt file and on MM7 decoding work performed by Transparent Star.</li>
+          <li>Fixed mm6 dlv parsing. (Fenghou)</li>
+          <li>Choosing recent history file now sets title bar. (Fenghou)</li>
+          <li>party.bin, odm, ddm, blv, dlv switched over to using tree display view to reduce memory requirements. (Weiarc, Fenghou, others)</li>
+          <li>Switched party.bin to an improved tree display view.</li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.43" date="May 04, 2005">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+          <li>Party.bin decoding.</li>
+          <li>Integrity checking of file formats while parsing.</li>
+          <li>Support for MM7 and MM8 bin files (excluding party.bin and dsft.bin).</li>
+          <li>Reorganized class and data layout.</li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.42" date="April 26, 2004">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+          <li>Indoor level decoding (blv and dlv resources)</li>
+          <li>Fix bug in computing new size of odm files (was always using original size)</li>
+	      <li>
+	        Other resources partially-decoded:
+	        <ul>
+	          <li>party.bin</li>
+	          <li>Dchest.bin</li>
+	          <li>DDecList.bin</li>
+	          <li>DIft.bin</li>
+	          <li>DMonList.bin</li>
+	          <li>DObjList.bin</li>
+	          <li>DSounds.bin</li>
+	          <li>DTft.bin</li>
+	          <li>DTile.bin</li>
+	          <li>DSFT.bin</li>
+          </ul></li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.41" date="April 20, 2005">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+          <li>More Event decoding</li>
+          <li>Add/Delete/Move around events</li>
+          <li>Allow save game editing (saved games are new.lod files)</li>
+          <li>Handler for npcdata.bin resources.</li>
+          <li>Handler for dsft.bin resources.</li>
+          <li>Added Monster decoding for odm files.</li>
+          <li>Added Item and Chest Content decoding for ddm files.</li>
+          <li>Add/Delete/Move around 3d objects, sprites, monsters, creatures, items, and chest contents.</li>
+          <li>Improved control for comparing and manipulating unknown data.</li>
+          <li>Minor decoding of ddm creatures.</li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.40" date="April 2, 2004">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+          <li>Display progress monitor panel for import operations</li>
+          <li>Provide better error reporting during import/export operations</li>
+          <li>Provide cancel import functionality</li>
+          <li>Select filename for new rebuilt lodfile</li>
+          <li>Rebuild a lod file directly from a resource viewer/editor. (odm, evt, str,
+          txt, and raw data displays).</li>
+          <li>Fixed binary data editor input to properly handle the various display
+          modes.</li>
+          <li>Display offset for binary data editor.</li>
+          <li>Toggle offset display between hex and decimal on offset-column click.</li>
+          <li>Provide user-specified blank cell padding to align binary data
+          horizontally.</li>
+          <li>Display progress monitor panel when loading data to display</li>
+          <li>Quick-update the current lod resource by appending updated content to the
+          end of the lod file.</li>
+          <li>Quick-update a lod resource by appending the contents of a selected file to
+          the end of the lod file.</li>
+          <li>Ability to view any lod resource with Data handler</li>
+          <li>Peliminary support for displaying/editing outdoor level maps (tiles,
+          heights, 3d object locations, sprite locations)</li>
+          <li>Peliminary support for displaying/editing event file instructions</li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.30" date="March 6, 2005">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+          <li>Ability to export and import all lod file resources (Thanks to Gabor Toth
+          for keeping me going).</li>
+          <li>Start on displaying Outdoor level maps (Thanks to Richard Johnson for
+          outdoor file format decoding).</li>
+          <li>Fix to display/extract/import all four components of a Bitmap.lod
+          tile.</li>
+          <li>Str resources now extracted as/imported from a txt file.</li>
+          <li>Removed LodEntryHandlerManager code and preference as it's no longer
+          necessary in an open-source project.</li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.10" date="April 2, 2004">
+      <action dev="mkienenb" type="add" context="admin">
+        <ul>
+          <li>Files now have consistent file suffixes when saved.</li>
+          <li>TGA and Sprite file types are automatically extracted as Bitmaps.</li>
+        </ul>
+      </action>
+    </release>
+    <release version="3.00" date="March 27, 2004">
+      <action dev="mkienenb" type="add" context="admin">
+        Initial Import
+      </action>
+    </release>
+  </changes>
+
+  <todo>
+    <actions priority="Needed Improvements">
+      <action context="all" dev="mkienenb">
+        <ul>
+          <li>localization: sort by targets, IOException</li>
+          <li>Item info order is wrong for last few fields for MM6</li>
+          <li>Display item info</li>
+          <li>Terrain normal distances seem to have swapped axis</li>
+          <li>LightSource Attributes orderings are inconsistent between versions.</li>
+          <li>Light Source controls needed.</li>
+          <li>duplicate/add/delete lod resources and files</li>
+          <li>Show lod file index as part of tree view</li>
+          <li>Fix control array index # to be adjusted number</li>
+          <li>create decoding table tool and handler</li>
+          <li>Dirty status for handler data changes</li>
+          <li>lodresourcecontroller instance tracker (especially for dirty data)</li>
+          <li>Add new/changed palette support for importing sprites.</li>
+          <li>Remove sprite loading lookup table objects and read array directly</li>
+          <li>Pal handler imports</li>
+          <li>Raw file imports</li>
+          <li>Some events have different formats</li>
+        </ul>
+      </action>
+    </actions>
+    <actions priority="Useful Enhancements">
+      <action context="all" dev="mkienenb">
+        <ul>
+          <li>Use dataHeader to optimize for MM6/7or8 game versioning</li>
+          <li>PageUp/PageDown for scroller in displayed components.</li>
+          <li>Retrieve save panel from application controller for persistence</li>
+          <li>Multiple monitor panel (a la eclipse background tasks)</li>
+          <li>Refactor UnlodFrame into display and control classes</li>
+          <li>Provide separate getData for raw/decoded composite data</li>
+          <li>Have icon palettes as part of getData/writeData</li>
+          <li>Load in multiple-image formats.</li>
+          <li>Write file converter functions for importing/exporting/displaying fnt files</li>
+          <li>Write tests that compute the md5 signature for all extracted MM6-8 resources to insure the basic unpacking code is still valid.</li>
+          <li>Find a better way to locate MM8LevelEditor.properties?</li>
+          <li>Somehow find installation directory for MM6-8 and make the default path point to one of them?</li>
+          <li>Create handler mechanism so LodFileLoader can be versioned and no longer referenced in org.gamenet.</li>
+          <li>Create loader mechanism for loading various LOD file types rather than hardcoding them in LodFileLoader</li>
+        </ul>
+      </action>
+    </actions>
+    <actions priority="Feedback">
+      <action context="feedback" dev="mkienenb">
+        Mail <link
+          href="mailto:mkienenb@gmail.com">mkienenb@gmail.com</link>
+        with feedback.
+      </action>
+    </actions>
+    <!-- Add todo items. @context is an arbitrary string. Eg:    -->
+
+  </todo>
+
+</status>

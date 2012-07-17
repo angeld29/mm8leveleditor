@@ -1,0 +1,4 @@
+MM8 - d3dbitmap.hwl (invalid lod file)
+MM8 - d3dsprite.hwl (invalid lod file)
+MM7 - d3dbitmap.hwl (invalid lod file)
+MM7 - d3dsprite.hwl (invalid lod file)

@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+
+<!-- Based on mm8leveleditor build.xml -->
+
+<project name="mm8leveleditor" default="help" basedir=".">
+
+    <property environment="env" />
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Some general properties                                          -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <target name="properties" description="--> Sets a number of common properties">
+    	<property name="project.name" value="MM8LevelEditor" />
+    	<property name="project.vendor" value="Mike Kienenberger mkienenb@gmail.com" />
+        <property name="mm8leveleditor.jar.name" value="mm8leveleditor.jar" />
+        <property name="language.jar.name" value="language.jar" />
+        <property name="unlod-base.jar.name" value="unlod-base.jar" />
+        <property name="jmf.jar.name" value="jmf.jar" />
+        <property name="license.gpl.txt" value="LICENSE-GPL.txt" />
+        <property name="license.w3c.txt" value="LICENSE-W3C.txt" />
+        <property name="license.mit.txt" value="LICENSE-MIT.txt" />
+        <property name="license.txt" value="LICENSE.txt" />
+        <property name="readme.txt" value="README.txt" />
+        <property name="application.properties.name" value="${project.name}.properties" />
+        <property name="mm8leveleditor.home" value=".." />
+        <property name="mm8leveleditor.src" value="${mm8leveleditor.home}/src" />
+        <property name="mm8leveleditor.classes" value="${mm8leveleditor.home}/classes" />
+        <property name="mm8leveleditor.lib" value="${mm8leveleditor.home}/lib" />
+        <property name="mm8leveleditor.docs" value="${mm8leveleditor.home}/doc" />
+        <property name="mm8leveleditor.www" value="${mm8leveleditor.home}/www" />
+        <property name="mm8leveleditor.tutorial" value="${mm8leveleditor.www}/tutorial" />
+        <property name="mm8leveleditor.examples" value="${mm8leveleditor.www}/examples" />
+        <property name="mm8leveleditor.dist" value="${mm8leveleditor.home}/dist" />
+        <property name="mm8leveleditor.sf" value="${mm8leveleditor.dist}/sf" />
+        <property name="mm8leveleditor.bin" value="${mm8leveleditor.home}/bin" />
+        <property name="mm8leveleditor.cvsroot" value=":pserver:anonymous@cvs.mm8leveleditor.sourceforge.net:/cvsroot/mm8leveleditor" />
+        <property name="unlod-base.jar" value="${mm8leveleditor.lib}/${unlod-base.jar.name}" />
+        <property name="jmf.jar" value="${mm8leveleditor.lib}/${jmf.jar.name}" />
+        <property name="language.jar" value="${mm8leveleditor.lib}/${language.jar.name}" />
+        <property name="defaultnumber" value="invalid" />
+
+        <property name="unlod-base.license.files.fqn" value="${mm8leveleditor.home}/LICENSE-W3C.txt,${mm8leveleditor.home}/LICENSE-GPL.txt" />
+        <property name="unlod-base.license.files" value="LICENSE-W3C.txt,LICENSE-GPL.txt" />
+        <property name="unlod-base.source.files" value="${mm8leveleditor.src}/com/mmbreakfast/**" />
+
+        <property name="mm8leveleditor.license.files" value="${mm8leveleditor.home}/LICENSE.txt,${mm8leveleditor.home}/LICENSE-MIT.txt,${mm8leveleditor.home}/LICENSE-GPL.txt" />
+        <property name="mm8leveleditor.source.files" value="${mm8leveleditor.src}/build.xml,${mm8leveleditor.src}/TODO.txt,${mm8leveleditor.src}/${application.properties.name},${mm8leveleditor.src}/org/gamenet/**" />
+
+    	<tstamp>
+    	    <format property="project.build.date" pattern="yyyy-MM-dd HH:mm:ss" locale="en"/>
+    	</tstamp>
+
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <!-- The classpath when the release is done                           -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <path id="classpath">
+            <pathelement location="${language.jar}" />
+            <pathelement location="${jmf.jar}" />
+            <pathelement location="${mm8leveleditor.bin}/${mm8leveleditor.jar.name}" />
+            <pathelement location="${unlod-base.jar}" />
+            <pathelement location="${mm8leveleditor.examples}" />
+        </path>
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Help                                                             -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="help" description="--> shows the help screen">
+        <echo>Using ANT for ${ant.project.name}</echo>
+        <echo />
+        <echo>INSTALLING mm8leveleditor</echo>
+        <echo>ant install.cvs: downloads and installs the current CVS version in one command</echo>
+        <echo />
+        <echo>GETTING THE CODE</echo>
+        <echo>ant checkout: checks out the code from CVS</echo>
+        <echo>ant download.cvs: downloads the most recent VERSION of the code</echo>
+         <echo />
+        <echo>COMPILING THE CODE</echo>
+        <echo>ant compile: compiles mm8leveleditor</echo>
+        <echo />
+        <echo>JARRING THE CODE</echo>
+        <echo>ant jar: compiles and jars mm8leveleditor</echo>
+        <echo />
+        <echo>ARCHIVING THE SOURCE</echo>
+        <echo>ant binzip: makes zipfile of the binary package</echo>
+        <echo />
+        <echo>ARCHIVING THE SOURCE</echo>
+        <echo>ant srczip: makes zipfile of the sourcecode package</echo>
+        <echo />
+        <echo>DOCUMENTATION</echo>
+        <echo>ant javadoc: generates the API documentation</echo>
+        <echo />
+        <echo>RELEASE</echo>
+        <echo>ant release: makes a complete mm8leveleditor release</echo>
+        <echo>ant -Dnumber=XXX release.sf: prepares a release XXX for sourceforge</echo>
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Getting the code                                                 -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="checkout" depends="properties" description="--> checks out the source code form CVS">
+        <echo>Logging in: the password for user anonymous is empty;</echo>
+        <echo>just press enter when asked for it</echo>
+        <cvs cvsroot="${mm8leveleditor.cvsroot}" command="login" />
+        <cvs cvsroot="${mm8leveleditor.cvsroot}" package="mm8leveleditor" dest="." />
+    </target>
+
+    <target name="download.cvs"  depends="properties, checkout" description="--> downloads the most recent version of the code">
+        <echo>Remark:</echo>
+        <echo>The CVS version is the most recent version of the code.</echo>
+        <echo>It may not always compile.</echo>
+    </target>
+
+    <!-- ========================================== -->
+    <!-- Cleans distribution files and subprojects. -->
+    <!-- ========================================== -->
+    <target name="clean" depends="properties" description="--> deletes mm8leveleditor classes, doc/api, dist, and bin directories">
+        <delete includeEmptyDirs="true" dir="${mm8leveleditor.dist}"/>
+        <delete includeEmptyDirs="true" dir="${mm8leveleditor.classes}"/>
+        <delete includeEmptyDirs="true" dir="${mm8leveleditor.bin}"/>
+        <delete includeEmptyDirs="true" dir="${mm8leveleditor.docs}/api"/>
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Copy any resource or configuration files -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <target name="resources" depends="properties" description="--> copies resources from src to classes">
+        <copy todir="${mm8leveleditor.classes}" includeEmptyDirs="no">
+            <fileset dir="${mm8leveleditor.src}">
+            <patternset>
+                <include name="**/*.properties"/>
+            </patternset>
+            </fileset>
+        </copy>
+    </target>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Compiling the code                                               -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="compile" depends="properties,resources" description="--> compiles the core mm8leveleditor code">
+        <mkdir dir="${mm8leveleditor.classes}" />
+        <javac srcdir="${mm8leveleditor.src}" destdir="${mm8leveleditor.classes}">
+            <classpath refid="classpath" />
+        </javac>
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Jarring the code                                                 -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="jar"  depends="properties,compile" description="--> makes a jarfile from the core mm8leveleditor code">
+        <mkdir dir="${mm8leveleditor.dist}" />
+        
+        <jar jarfile="${mm8leveleditor.dist}/${language.jar.name}">
+			<fileset dir="${mm8leveleditor.classes}">
+			  <filename name="language/**"/>
+			</fileset>
+		    <manifest>
+			      <attribute name="Manifest-Version" value="1.0"/>
+			      <attribute name="Built-By" value="${user.name}"/>
+				  <attribute name="Built-Date" value="${project.build.date}"/>
+
+			      <attribute name="Implementation-Title" value="${project.name} languages"/>
+				  <attribute name="Implementation-Version" value="${number}"/>
+				  <attribute name="Implementation-Vendor" value="${project.vendor}"/>
+				  <attribute name="Specification-Title" value="${project.name} languages"/>
+				  <attribute name="Specification-Version" value="${number}"/>
+				  <attribute name="Specification-Vendor" value="${project.vendor}"/>
+		    </manifest>
+		</jar>
+        
+        <jar jarfile="${mm8leveleditor.dist}/${unlod-base.jar.name}">
+			<fileset dir="${mm8leveleditor.classes}">
+			  <filename name="com/mmbreakfast/**/*.class"/>
+			</fileset>
+			<fileset dir="${mm8leveleditor.src}">
+			  <filename name="com/mmbreakfast/**/*.java"/>
+			</fileset>
+			<fileset dir="${mm8leveleditor.home}">
+			  <filename name="${license.gpl.txt}"/>
+			</fileset>
+			<fileset dir="${mm8leveleditor.home}">
+			  <filename name="${license.w3c.txt}"/>
+			</fileset>
+		    <manifest>
+			      <attribute name="Manifest-Version" value="1.0"/>
+			      <attribute name="Built-By" value="${user.name}"/>
+				  <attribute name="Built-Date" value="${project.build.date}"/>
+
+			      <attribute name="Implementation-Title" value="${project.name} unlod"/>
+				  <attribute name="Implementation-Version" value="${number}"/>
+				  <attribute name="Implementation-Vendor" value="${project.vendor}"/>
+				  <attribute name="Specification-Title" value="${project.name} unlod"/>
+				  <attribute name="Specification-Version" value="${number}"/>
+				  <attribute name="Specification-Vendor" value="${project.vendor}"/>
+		    </manifest>
+		</jar>
+        
+        <jar jarfile="${mm8leveleditor.dist}/${mm8leveleditor.jar.name}">
+			<fileset dir="${mm8leveleditor.classes}">
+				  <not>
+				  	<filename name="com/mmbreakfast/**/*.class"/>
+				  </not>
+				  <not>
+				  	<filename name="language/**"/>
+				  </not>
+				  <not>
+				  	<filename name="documentation/**"/>
+				  </not>
+			</fileset>
+			<fileset dir="${mm8leveleditor.src}">
+				  <not>
+				  	<filename name="com/mmbreakfast/**/*.java"/>
+				  </not>
+				  <not>
+				  	<filename name="language/**"/>
+				  </not>
+				  <not>
+				  	<filename name="documentation/**"/>
+				  </not>
+			</fileset>
+			<fileset dir="${mm8leveleditor.home}">
+			  <filename name="${license.gpl.txt}"/>
+			</fileset>
+			<fileset dir="${mm8leveleditor.home}">
+			  <filename name="${license.mit.txt}"/>
+			</fileset>
+			<fileset dir="${mm8leveleditor.home}">
+			  <filename name="${license.txt}"/>
+			</fileset>
+			<fileset dir="${mm8leveleditor.home}">
+			  <filename name="${readme.txt}"/>
+			</fileset>
+		    <manifest>
+			      <attribute name="Manifest-Version" value="1.0"/>
+			      <attribute name="Class-Path" value="${unlod-base.jar.name} ${jmf.jar.name} ${language.jar.name}"/>
+			      <attribute name="Main-Class" value="org.gamenet.application.mm8leveleditor.MM8LevelEditor"/>
+				  <attribute name="Built-By" value="${user.name}"/>
+				  <attribute name="Built-Date" value="${project.build.date}"/>
+
+			      <attribute name="Implementation-Title" value="${project.name}"/>
+				  <attribute name="Implementation-Version" value="${number}"/>
+				  <attribute name="Implementation-Vendor" value="${project.vendor}"/>
+				  <attribute name="Specification-Title" value="${project.name}"/>
+				  <attribute name="Specification-Version" value="${number}"/>
+				  <attribute name="Specification-Vendor" value="${project.vendor}"/>
+		    </manifest>
+		</jar>        
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Packaging the binary                                             -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="binzip" depends="properties, jar" description="--> makes mm8leveleditor bin file zip package">
+        <mkdir dir="${mm8leveleditor.dist}" />
+        <zip zipfile="${mm8leveleditor.dist}/${project.name}-package.zip">
+    		<zipfileset file="${jmf.jar}" prefix="mm8leveleditor"/>
+			<zipfileset dir="${mm8leveleditor.dist}" includes="${mm8leveleditor.jar.name}" prefix="mm8leveleditor"/>
+			<zipfileset dir="${mm8leveleditor.dist}" includes="${language.jar.name}" prefix="mm8leveleditor"/>
+			<zipfileset dir="${mm8leveleditor.dist}" includes="${unlod-base.jar.name}" prefix="mm8leveleditor"/>
+			<zipfileset dir="${mm8leveleditor.src}" includes="${application.properties.name}" prefix="mm8leveleditor"/>
+			<zipfileset dir="." includes="${mm8leveleditor.license.files}" prefix="mm8leveleditor"/>
+			<zipfileset dir="." includes="README.txt" prefix="mm8leveleditor"/>
+         </zip>
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Documenting the source                                           -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+     <target name="javadoc" depends="properties" description="--> generates the complete documentation with javadoc">
+        <mkdir dir="${mm8leveleditor.docs}" />
+        <javadoc packagenames="com.mmbreakfast.*,org.gamenet.*"
+            sourcepath="${mm8leveleditor.src}"
+            destdir="${mm8leveleditor.docs}/api"
+            author="true"
+            private="true">
+            <classpath refid="classpath" />
+            <link href="http://java.sun.com/products/java-media/jmf/2.1.1/apidocs/" />
+            <link href="http://java.sun.com/j2se/1.4.2/docs/api/" />
+        </javadoc>
+    </target>
+
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Archiving the source                                              -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="srczip" depends="properties, javadoc" description="--> makes mm8leveleditor source file zip package">
+        <mkdir dir="${mm8leveleditor.dist}" />
+        <zip zipfile="${mm8leveleditor.dist}/${project.name}-package-src.zip" basedir="${mm8leveleditor.home}" excludes="extracted/**, classes/**, dist/**, ${project.name}.properties"/>
+    <!-- 
+        <zip zipfile="${mm8leveleditor.dist}/unlod-base.src.zip" basedir="${mm8leveleditor.src}" includes="${unlod-base.license.files.fqn},${unlod-base.source.files}" />
+        <zip zipfile="${mm8leveleditor.dist}/mm8leveleditor.src.zip" basedir="${mm8leveleditor.src}" includes="${mm8leveleditor.license.files},${mm8leveleditor.source.files}" />
+    -->
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Making a release                                                 -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="release" depends="properties, binzip, srczip" description="--> makes a complete mm8leveleditor release">
+    </target>
+
+    <target name="no.version.number" if="number.is.invalid">
+        <fail message="You didn't enter a version number: ant -Dnumber=XXX release.sf" />
+    </target>
+
+    <target name="release.sf" depends="properties, clean" description="--> makes a complete mm8leveleditor release ready to publish on SourceForge">
+        <property name="number" value="${defaultnumber}" />
+        <property name="number.is.${number}" value="true" />
+        <antcall target="no.version.number" />
+        <antcall target="release" />
+        <mkdir dir="${mm8leveleditor.sf}" />
+        <copy file="${mm8leveleditor.dist}/${project.name}-package.zip" tofile="${mm8leveleditor.sf}/${project.name}-package-${number}.zip" overwrite="yes" />
+        <copy file="${mm8leveleditor.dist}/${project.name}-package-src.zip" tofile="${mm8leveleditor.sf}/${project.name}-package-src-${number}.zip" overwrite="yes" />
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Installing mm8leveleditor in one command                                  -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="install.cvs" depends="properties, download.cvs, release" description="--> installs the current version of mm8leveleditor in one command">
+    </target>
+
+</project>

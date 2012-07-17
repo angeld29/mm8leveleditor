@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2002-2004 The Apache Software Foundation
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!DOCTYPE faqs PUBLIC "-//APACHE//DTD FAQ V2.0//EN" "http://forrest.apache.org/dtd/faq-v20.dtd">
+
+<faqs>
+  <title>Frequently Asked Questions</title>
+
+  <faqsection id="docs">
+    <title>Usage</title>
+    <faq id="Java">
+      <question>
+            What version of Java does this require?
+      </question>
+      <answer>
+        <p>
+            Java 1.4.2 or higher.   You only need the JRE and not the JDK.  I test everything using Sun Java 1.4.2.
+        </p>
+      </answer>
+    </faq>
+    <faq id="OutOfMemoryException">
+      <question>
+            Why am I getting an OutOfMemoryException or heap space allocation error?
+      </question>
+      <answer>
+        <p>
+            You might need to grant java more memory (java defaults to 64Mb total)
+            for large data resources.   Use
+            "<code>java -Xms1024M -Xmx1024M -jar mm8leveleditor.jar</code>"
+            to set the available memory to 1024Mb.
+        </p>
+      </answer>
+    </faq>
+    <!-- More faqs or parts here -->
+  </faqsection>
+  <!-- More faqs or parts here -->
+</faqs>

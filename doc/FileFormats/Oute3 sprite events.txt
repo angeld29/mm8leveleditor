@@ -1,0 +1,116 @@
+0 - normal sprite
+1 - ?
+2 - welcome to NS
+3 - NS temple
+4 - NS temple (no enter)
+5 - common defense amory
+6 - common defense amory (no e) -- possibly the sign?
+7 - savings house
+8 - savings house (no e)
+9 - traveler supply
+10 - traveler supply (no e)
+11 - a lonely knight
+12 - a lonely knight (no e)
+13 - seeing eye
+14 - seeing eye (no e)
+15 - NS coach company
+16 - NS coach company (no e)
+17 - The Knife shop
+18 - The Knife shop (no e)
+19 - Blade's end
+20 - Blade's end (no e)
+21 - Initiate Guild of Elements
+22 - Initiate Guild of Elements (no e)
+23 - NS Training Grounds
+24 - NS Training Grounds (no e)
+25 - Initiate Guild of Self
+26 - Initiate Guild of Self (no e)
+27 - Buccaneers' Lair
+28 - town hall
+29 - odyssey (ship)
+- ?
+50 - Isao Magistrus the teacher house
+51 - Taro the teacher house
+52 - Enoch Highridge the teacher house
+53 - Virgil Holiday the teacher house
+54 - Abdulai Mahgreb house
+55 - Douglas Hill the house
+56 - Igor the teacher house
+57 - Dorf the teacher house
+58 - Victor Hosen the teacher house
+59 - Erik Salzburg the teacher
+60 - Sheila Loompus the Teacher
+61 - Tara D'Cathay the teacher
+62 - Cheryl Ducan the teacher
+63 - Urok 
+64 - Donald Retzer the teacher
+65 - Buford T Allman the Barrister
+66 - Violet Dawson the Potter
+67 - Hejaz Mawsil the Mystic
+68 - Harold Hess the Laborer
+69 - Falagar the Gate Master
+70 - Naomi Highand the Healer
+71 - Orville Covair the Scholar
+72 - ?
+73 - ?
+74 - ?
+75 - crate - gold x 7
+76 - crate - gold mace, leather, ring, cloak
+77 - crate - gold x 5
+78 - crate - sword x potion
+79 - crate - gold x 2, scroll, staff
+80 - crate - cloak, potion, dagger, berries
+81 - crate - gold x 3, two potions, mace
+82 - crate - gold x 7, sword, helm
+83 - crate - gold x 2, shield, poppysnap
+84 - crate - gold x 5, berries, two potions, two rings, glove
+85 - crate - gold x 2, bow, chainmail, scroll, ring
+86 - crate - gold x 5, crossbow
+87 - crate - gold x 1, leather, hammer, mace, ring, crown, berries, potion
+88 - crate - scroll, leather, ring, cloak, staff, spear, root
+89 - crate - sword, wand
+90 - crate - gold x 2, sword, halberd, shield, gloves, boots
+91 - rock - gold x 2, berries
+92 - crate - gold x 3, ring
+- ?
+101 - the door is locked - goblinwatch
+102 - abandoned temple entrance
+103 - gharik's forge
+104 - teleporter to dragon sands
+105 - ?
+106 - ? 
+107 - ?
+108 - ?
+109 - refreshing
+110 - well, refreshing
+111 - tree w/apples
+112 - tree w/apples
+113 - tree w/apples
+114 - tree w/apples
+115 - tree w/apples
+116 - tree w/apples
+117 - tree w/apples
+118 - tree w/apples
+119 - tree w/apples
+- ?
+131 - fountain +5 hp
+- ?
+
+140 to 219 -- untested
+
+220 - ?
+221 - ?
+222 - ?
+223 - ?
+224 - ?
+225 - create fly scroll
+226 - create sword
+- ?
+
+231 [guess] - disable anti-fly defenses
+
+240 - obelisk message
+- ?
+259 - ? [last tested]
+
+

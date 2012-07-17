@@ -1,0 +1,20 @@
+bin Notes:
+============
+0	entryCount	4 bytes
+4	data	4 bytes - ?  1656? # of sets?
+
+56 entry size
+
+0	name1	12 bytes -- set name on first element
+12	name2	no more than 28	bytes -- element name in sprites
+40	data	2 bytes
+42	data 	2 bytes
+44	data 	4 bytes?
+48	data	4 bytes -- offset?
+52	data	2 bytes -- ?
+54	data	2 bytes - 00 if continuation, # of items in this set?
+
+followed by two-byte indexes into the entries at entryCount * 56 (0x4 offset count matches the # of these)
+
+
+//Label	Filename	(NEW)	Palette	Scale	Light	Ticks	Facing	X	Y	Alpha	Glow	Center	Flag4	//	Comments

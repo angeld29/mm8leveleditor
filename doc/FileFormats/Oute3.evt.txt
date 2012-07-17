@@ -1,0 +1,277 @@
+Events are preceded by a command-length count byte.
+(-1) - length count
+   0 - event ref #
+   1 - sequence # -- changing this value prevents action command 2 but still reads 2devent for mouseover
+   2 - command
+   		
+   		comm = 1
+   			End event processing
+   			1 byte - 0
+   		comm = 2
+   			2DEvent Identifier
+   			4 bytes giving 2DEvents.txt number to smack-play on click
+		comm = 4
+			Mouseover text identifier (if no comm=2 identifier set?)
+			1 byte
+			mouseover -  byte ignored if comm=2 exists, otherwise index into local event string file
+			if comm=2, 1 byte giving Low Order Byte of 2Devent.txt number, but not used
+			also seems to be the event number identity byte.   Changing the event number on other commands had no effect.  Might have to do with this being the first one.
+		comm = 6
+			Teleport party (optional dialog screen?)
+			34 or more bytes
+			4 bytes x-coord of dest
+			4 bytes y-coord of dest
+			4 bytes z-coord of dest
+			2 bytes - horizontal facing
+			2 bytes -- unknown (maybe unused horizontal facing)
+			2 bytes - vertical facing
+			2 bytes -- unknown (maybe unused vertical facing)
+			4 bytes unknown (maybe some other orientation facing)
+			
+				if both of below are 00, go immediately to location
+			1 bytes - 2DEvent smk # to show - 00 for none, order of rest is unknown (probably hardcoded in MM6.exe), also chooses text from trans.txt
+			1 bytes - miniIcon to show -- hardcoded to these icon resources in MM6.EXE
+				0 - Not symbol
+				1 - castle
+				2 - dungeon
+				3 - idoor
+				4 - isecdoor
+				5 - istairdn
+				6 - istairup
+				7 - itrap
+				8 - outside
+			rest of bytes name of level
+		comm = 8
+			Show face action
+			2 bytes
+			arg offset 0 = party member
+				0=first position
+				1=second position
+				2=third position
+				3=fourth position
+				4=current person,
+				5=party,
+				6,7=random?
+			arg offset 1 = face id # to show
+		comm = 13(xD)
+		    Change sprite?
+		    arg offset 0 - 2 bytes - sprite number
+		    arg offset 2 - 2 bytes - zero, possibly for above
+		    arg offset 4 - 1 byte - one?
+		    arg offset 5+ - new sprite name to use
+		    
+		comm = 14(xE)
+			Branch on flag true
+			6 bytes
+			1 byte - value x10 (16) is quest bit #, value x11 (17) is item #
+			2 bytes - number for above
+			2 bytes - zero, possibly rest of above
+			1 byte - next event sequence to execute if true	
+		comm = 16 (x10)
+			Add
+			5 bytes
+			arg offset 0 - 1 byte - target type
+			    2: +305 HP / zeros SP
+			    3: add temp HP
+			    4: temp HP = max HP
+			    5: temp SP = max SP
+			    6: temp SP = max SP
+			    8: add temp AC
+			    9: add level
+			    xA(10): add temp level
+			    xB(11): add temp age
+			    xC(12): add award
+			    xD(13): add experience
+			    x11(17): add item to cursor inventory
+				x15(21): add gold
+				x16(22): add gold
+				x17(23): add food
+				x18(24): add food
+				x19(25): add temp might
+				x1a(26): add temp intellect
+				x1b(27): add temp personality
+				x1c(28): add temp endurance
+			    x1d(29): add temp speed
+			    x1e(30): add temp accuracy
+			    x1f(31): add temp luck
+				x20(32): add permanent might
+				x21(33): add permanent intellect
+				x22(34): add permanent personality
+				x23(35): add permanent endurance
+			    x24(36): add permanent speed
+			    x25(37): add permanent accuracy
+			    x26(38): add permanent luck
+				x27(39): add temp might
+				x28(40): add temp intellect
+				x29(41): add temp personality
+				x2a(42): add temp endurance
+			    x2b(43): add temp speed
+			    x2c(44): add temp accuracy
+			    x2d(45): add temp luck
+				x2e(46): add permanent fire resistance
+				x2f(47): add permanent electricity resistance
+				x30(48): add permanent cold resistance
+				x31(49): add permanent poison resistance
+				x32(50): add permanent magic resistance
+				x33(51): add temp fire resistance
+				x34(52): add temp electricity resistance
+				x35(53): add temp cold resistance
+				x36(54): add temp poison resistance
+				x37(55): add temp magic resistance
+				x38(56): add staff skill
+				x39(57): add sword skill
+				x3a(58): add dagger skill
+				[...]
+				x3f(63): add blaster skill
+				x40(64): add shield skill
+				[...]
+				x43(67): add plate skill
+				x44(68): add fire magic skill
+				[...]
+				x4a(74): add body magic skill
+				x4b(75): ?
+				x4c(75): ?
+				x4d(75): add identify skill
+				[...]
+				x56(84): add learning skill
+				x57(85): add cursed condition
+				x58(86): add weak condition
+				x59(87): add sleep condition
+				x5a(88): add afraid condition
+				x5b(89): add drunk condition
+				x5c(90): add insane condition
+				x5d(91): add poison green condition
+				x5e(92): add disease condition
+				x5f(93): add poison yellow condition
+				x60(94): add disease yellow condition
+				x61(95): add poison red condition
+				x62(96): add disease red condition
+				x63(97): add paralysed condition
+				x64(98): add unconscious condition
+				x65(99): add dead condition
+				x66(100): add stoned condition
+				x67(101): add eradicated condition
+				
+			arg offset - 4 bytes - # to add
+		comm = 17 (x11)
+			Delete item from inventory, including cursor carry
+			5 bytes
+			1 byte - value x10 (16) is quest bit #, value x11 (17) is item #
+			2 bytes - number for above
+			2 bytes - zero, possibly rest of above
+		comm = 18 (x11)
+			Mark quest bit solved
+			5 bytes
+			1 byte - value x10 (16) is quest bit #, value x11 (17) is item #
+			2 bytes - number for above
+			2 bytes - zero, possibly rest of above
+		comm = 29 (x1D)
+			Show local event str
+			2 bytes - local event str to show
+			2 bytes - zero, possibly rest of above
+		comm = 35 (x23)
+			UNKNOWN -- see GoblinWatch entrance event "1" sequence
+			1 byte - unknown
+		comm = 36 (x24)
+			GOTO
+			1 byte - unknown
+		comm = 41
+			another add target command?
+			6 bytes
+			arg offset 0 - 4 (affects?)
+			arg offset 1 - target type
+			arg offset 2 - target number (4 bytes? 2?
+			appears to be add sword to inventory for event 225 at castle ironside
+			
+		
+		target type
+			value x10 (16) is quest bit = #
+			value x11 (17) is item = #
+			value x27 (39) might >= #
+			value x28 (40) intellect >= #
+			value x29 (41) personality >= #
+			value x2a (42) endurance >= #
+			value x2b (43) speed >= #
+			value x2c (44) accuracy >= #
+			value x2d (45) luck >= #
+x339 - x411 crates of stuff (12 bytes wide)
+
+101 - d01 goblinwatch
+
+	No mouseover name
+	key goes away when opened
+	door is locked message is 18
+	2devent.txt # 171, trans.txt # 171
+	items.txt  key # 489 (01 e9)
+	quests.txt  quest bit #300 (01 2c)
+
+	event "0" - 14 (xE) => if quest bit check, goto event "7"
+		1 byte - value x10 (or 16)
+		2 bytes - goblin watch key quest bit #
+		2 bytes - zero (possibly rest of above)
+		1 byte - value 7
+
+	event "1" - 35 (x23)
+		1 byte - value 5
+		
+	event "2" - 14 (xE) => if have key check, goto event "5"
+		1 byte - value x11 (or 17)
+		2 bytes - goblin key item #
+		2 bytes - zero (possibly rest of above)
+		1 byte - value 5
+		
+	event "3" - 29 (x1d) =?> show message 18
+		4 bytes - value x12 (or 18)
+		
+	event "4" - 1 =?> stop processing?
+		1 byte - value 0
+		
+	event "5" - 17 (x11)  => delete key
+		1 byte - value x11 (or 17)
+		2 bytes - goblin key item #
+		2 bytes - zero (possibly rest of above)
+		
+	event "6" - 18 (x12) => allow entrance from now on
+		1 byte - value x10 (or 16)
+		2 bytes - goblin watch key quest bit #
+		2 bytes - zero (possibly rest of above)
+		
+	event "7" - 6 => enter dungeon
+		4 bytes x-coord of dest
+		4 bytes y-coord of dest
+		4 bytes z-coord of dest
+		2 bytes - value f4 01 for D01
+		10 bytes unknown (all zero)
+		2 bytes - value ab 05 for D01
+		10 bytes name of dest level
+
+	event "8" - 1 =?> stop processing?
+		1 byte - value 0
+		
+	event "9" - 2 => goblinwatch 2Devent dungeon identifier
+		4 bytes - value 171 (xab) => 2Devent: 171	1	Dungeon Ent	E3	111	Goblinwatch															Dungeon	16	Need Key	Enter	The doors to this keep are locked.
+		
+x04a5 - 102 - d02 temple
+x04db - 103 - d18 ghariks forge
+
+104 - teleporter to dragon sands (possibly starting at x04f2)
+	x04f7 x coord // 4 bytes
+	x04fb y coord // 4 bytes
+    x04ff z coord // 4 bytes
+	x0511 map name // 8 bytes, zero terminated
+x0511 - 104 - teleporter to dragon sands
+
+111 - 263 bytes to tree 1
+112 - 101 bytes to tree 2
+113 - 95 bytes to tree 3
+114 - 95 bytes to tree 4
+115 - 95 bytes to tree 5
+116 - 95 bytes to tree 6
+117 - 95 bytes to tree 7
+118 - 95 bytes to tree 8
+119 - 95 bytes to tree 9
+
+
+226? - x0d5a - sword removed from stone sprite
+231 [guess] - x0dfd - button bitmap
+231 [guess] - x0e28 - button bitmap

@@ -1,0 +1,35 @@
+peasants are creatures.
+First part of creature name is kind of critter
+
+x80: 0xe0,224, -32  0xe0e0,57568, -7968  0x00a0e0e0,   10543328,   10543328 [à] - Oute3.ddm.orig
+2076: 0xed,237, -19  0xe1ed,57837, -7699  0x00a0e1ed,   10543597,   10543597 [í] - Oute3.ddm
+
+x81: 0xe0,224, -32  0xa0e0,41184,-24352  0x5100a0e0, 1358995680, 1358995680 [à] - Oute3.ddm.orig
+2077: 0xe1,225, -31  0xa0e1,41185,-24351  0x4100a0e1, 1090560225, 1090560225 [á] - Oute3.ddm
+
+x84: 0x51, 81,  81  0x0051,   81,    81  0x00710051,    7405649,    7405649 [Q] - Oute3.ddm.orig
+2080: 0x41, 65,  65  0x0041,   65,    65  0x007b0041,    8060993,    8060993 [A] - Oute3.ddm
+
+x86: 0x71,113, 113  0x0071,  113,   113  0x00000071,        113,        113 [q] - Oute3.ddm.orig
+2082: 0x7b,123, 123  0x007b,  123,   123  0x0000007b,        123,        123 [{] - Oute3.ddm
+
+x8a: 0x36, 54,  54  0x0136,  310,   310  0x00000136,        310,        310 [6] - Oute3.ddm.orig
+2086: 0x61, 97,  97  0x0161,  353,   353  0x00000161,        353,        353 [a] - Oute3.ddm
+
+x90: 0x3d, 61,  61  0x013d,  317,   317  0xd7c8013d, 3620208957, -674758339 [=] - Oute3.ddm.orig
+2092: 0xa5,165, -91  0x03a5,  933,   933  0xd7c803a5, 3620209573, -674757723 [¥] - Oute3.ddm
+
+x91: 0x01,  1,   1  0xc801,51201,-14335  0x98d7c801, 2564278273,-1730689023 [] - Oute3.ddm.orig
+2093: 0x03,  3,   3  0xc803,51203,-14333  0x98d7c803, 2564278275,-1730689021 [] - Oute3.ddm
+
+xA8: 0xfa,250,  -6  0x00fa,  250,   250  0x000000fa,        250,        250 [ú] - Oute3.ddm.orig
+2116: 0x1a, 26,  26  0x021a,  538,   538  0x0000021a,        538,        538 [] - Oute3.ddm
+
+xA9: 0x00,  0,   0  0x0000,    0,     0  0x22000000,  570425344,  570425344 [] - Oute3.ddm.orig
+2117: 0x02,  2,   2  0x0002,    2,     2  0x22000002,  570425346,  570425346 [] - Oute3.ddm
+
+x,y,z, facing
+
+# of creatures seems to change a lot, even when "nothing happened"
+Creature values seem to change even when they're all dead.
+Unknown1 items change every time, and the same amount for each item.

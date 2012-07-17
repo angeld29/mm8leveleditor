@@ -1,0 +1,89 @@
+Differences between new.lod files with new generic party
+
+0c: fe, d3
+0d: e5, e6
+
+80: 40, 0d
+81: fc, 04
+82: e5, 8d
+83: 00, 05
+
+84: 12, 7a
+
+
+Differences between new and new+save
+Chapter entry:
+0109: 00, 5c
+010A: e5, da
+010B: 00, 02
+010C: f8, 64
+010D: 5b, f8
+010E: da, 12
+010F: 02, 00
+
+0114: f1, f6
+0115: e0, 83
+0116: 02, 03
+
+clock.bin:
+018b: 02, 01
+018c: 78, 73
+018d: 01, 26
+018e: e5, e3
+018f: 00, 77
+
+header.bin:
+042b: 02, 00
+042c: 78, 04
+042d: 01, 00
+042e: e5, 00
+
+image.pcx:
+046a: d8, 28
+046b: 02, 01
+046c: 78, 73
+046d: 01, 26
+046e: e5, e3
+
+0474: 60, 26
+0475: 08, 96
+
+npcdata.bin:
+048c: 78, 73
+048d: 01, 26
+048e: e5, e3
+048f: 00, 77
+0490: 2d, f3
+0491: db, 68
+0492: 00, 01
+
+oracle.dlv:
+04b0: ed, b3
+04b1: 38, c6
+
+Outa1.ddm:
+04d0: de, a4
+04d1: 3a, c8
+
+[all file offsets 4 byte for remaining files]
+
+Oute3 (O -> o)
+068a: 00, 6e (byte after zero terminator)
+
+068c: f8, 73
+068d: eb, 26
+068e: fd, e3
+068f: 7f, 77
+
+0694: 18, 57
+0695: 06, 1b
+
+overlay.bin:
+78, 01, e5, 00
+73, 26, e3, 77
+
+party.bin:
+02, 78, 01, e5, 00
+01, 73, 26, e3, 77
+
+Remaining files seem unchanged

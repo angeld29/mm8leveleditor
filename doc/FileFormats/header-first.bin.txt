@@ -1,0 +1,3 @@
+00 - save game name, max length 19 (20 with zero)
+21 - map name, probably same length as above
+40 - 4 bytes - game time

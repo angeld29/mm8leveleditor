@@ -1,0 +1,6 @@
+20 bytes wide
+
+Might be
+
+	8 bytes
+followed by 50 rows of 20-byte records

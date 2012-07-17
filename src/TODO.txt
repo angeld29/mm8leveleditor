@@ -1,0 +1,43 @@
+THIS FILE IS NOW OUT OF DATE.
+
+See build/site/index.html
+
+Need to put readme file in zip distribution package.
+
+Needed Improvements
+- DSft.bin needs mm7 and mm8 support
+- dlv format isn't correct for all mm6 dlv files
+- Handle offsets in blv Unknown0 data
+- Items in chest control array
+- duplicate/add lod resources
+- create decoding table tool and handler
+- decode identified status bits - 0/1 id, 0/2 broken, 0/4?
+- decode unknown1 chest contents
+- handle special magic in chest items, gold in items
+- decode unknown3 in chest items (item class?)
+- Dirty status for handler data changes
+- lodresourcecontroller instance tracker (especially for dirty data)
+- Add new/changed palette support for importing sprites.
+- Remove sprite loading lookup table objects and read array directly
+- Pal handler imports
+- Bin file handlers
+- Cross-reference data in other files
+- Raw file imports
+--MM7 and MM8 level format differences
+- Some events have different formats
+- Odm/blv/ddm/dlv have slightly different formats
+
+Useful Enhancements
+- Retrieve save panel from application controller for persistence
+- Multiple monitor panel (a la eclipse background tasks)
+- Refactor UnlodFrame into display and control classes
+- Convert docs to xdoc format so I don't maintain two files for README and index.html.
+- Provide separate getData for raw/decoded composite data
+- Have icon palettes as part of getData/writeData
+- Load in multiple-image formats.
+- Write file converter functions for importing/exporting/displaying fnt files
+- Write tests that compute the md5 signature for all extracted MM6-8 resources to insure the basic unpacking code is still valid.
+- Find a better way to locate MM8LevelEditor.properties?
+- Somehow find installation directory for MM6-8 and make the default path point to one of them?
+- Create handler mechanism so LodFileLoader can be versioned and no longer referenced in org.gamenet.
+- Create loader mechanism for loading various LOD file types rather than hardcoding them in LodFileLoader
